@@ -106,3 +106,30 @@
 .tab-btns button:hover{
     box-shadow: 0 0 15px var(--text-shadow);
 }
+
+
+@media (max-width: 995px){
+    .title{
+        padding-top: 1rem;
+        padding-left: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .main-body-p{
+        padding: auto;
+        margin: 0;
+    }
+
+    .project-tab{
+        width: 80vw;
+        height: 12rem;
+    }
+
+    .tab-name{
+        font-size: 18px;
+    }
+    .tab-desc{
+        font-size: 16px;
+        padding-right: 1rem;
+    }
+}
