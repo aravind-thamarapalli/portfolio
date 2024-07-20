@@ -282,7 +282,7 @@ text-shadow: 0 0 5px var(--text-shadow), 0 0 5px var(--text-shadow);
         width: auto;
     }
     .main-body-2 img{
-        height: 30vh;
+        height: auto;
         width: auto;
         padding: 0 auto;
     }
