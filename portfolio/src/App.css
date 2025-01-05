@@ -1,42 +1,15 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+:root{
+    --navbar-background: #63024c83;
+    --primary-color-1: #ed86d7;
+    --primary-color-2: rgb(1, 159, 182);
+    --text-shadow: rgb(182, 1, 176);
+    --gradient-shade-1: #019fb6;
+    --gradient-shade-2: #be24c3;
+    --secondary-color-1: #63024c;
+    --secondary-color-2: #000000;
+    --project-color-1: #63024c5d;
+    --project-color-2: #3202635d;
+    --project-shadow: rgba(182, 1, 176, 0.548);
+    --sequencer-color: rgb(40, 1, 182);
 }
