@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
 
 const Projects = () => {
-  const [display, setDisplay] = useState(false);
   const [handleHam, setHandleHam] = useState(false);
 
   const ProjectData = {
@@ -62,32 +61,7 @@ const Projects = () => {
 
   return (
     <div>
-      <div className="main">
-        <div className="navbar">
-          <div className="logo">
-            Portfolio <span>.</span>
-          </div>
-          <div className={`tabs ${handleHam === true && "active"}`}>
-            <Link to="/hero" className="tab tab1">
-              HOME
-            </Link>
-            <Link to="/about" className="tab tab2">
-              ABOUT
-            </Link>
-            <Link to="/projects" className="tab-main tab3">
-              PROJECTS
-            </Link>
-            <Link to="/contact" className="tab tab4">
-              CONTACT
-            </Link>
-          </div>
-          <button
-            className="open-menu"
-            onClick={() => setHandleHam(!handleHam)}
-          >
-            <RxHamburgerMenu />
-          </button>
-        </div>
+      <div className="main-p main">
         <div className="main-body-p">
           <h2 className="title">MY PROJECTS</h2>
           <div className="project-tabs">

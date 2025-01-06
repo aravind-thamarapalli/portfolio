@@ -22,7 +22,9 @@
 
 .navbar{
     height: 4.5rem;
+    width: 100%;
     padding: 1rem 2rem;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     backdrop-filter: blur(20px);
@@ -264,7 +266,7 @@ text-shadow: 0 0 5px var(--text-shadow), 0 0 5px var(--text-shadow);
         flex-direction: column-reverse;
         margin: 0.8rem;
         padding: 0.8rem;
-        height: auto;
+        height: 100vh;
         z-index: 0;
     }
 
@@ -278,13 +280,12 @@ text-shadow: 0 0 5px var(--text-shadow), 0 0 5px var(--text-shadow);
     }
     
     .main-body-2{
-        height: 30vh;
+        height: auto;
         width: auto;
     }
     .main-body-2 img{
         height: auto;
         width: auto;
-        padding: 0 auto;
     }
 
     .headings{

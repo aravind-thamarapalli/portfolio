@@ -74,31 +74,6 @@ const Hero = () => {
   return (
     <>
       <div className="main">
-        <div className="navbar">
-          <div className="logo">
-            Portfolio <span>.</span>
-          </div>
-          <div className={`tabs ${handleHam === true && "active"}`}>
-            <Link to="/hero" className="tab-main tab1">
-              HOME
-            </Link>
-            <Link to="/about" className="tab tab2">
-              ABOUT
-            </Link>
-            <Link to="/projects" className="tab tab3">
-              PROJECTS
-            </Link>
-            <Link to="/contact" className="tab tab4">
-              CONTACT
-            </Link>
-          </div>
-          <button
-            className="open-menu"
-            onClick={() => setHandleHam(!handleHam)}
-          >
-            <RxHamburgerMenu />
-          </button>
-        </div>
         <div className="main-body">
           <div className="main-body-1">
             <div className="headings">
@@ -132,16 +107,16 @@ const Hero = () => {
               </p>
             </div>
             <div className="link-icons">
-              <a href="">
+              <a href="https://github.com/aravind-thamarapalli">
                 <PiGithubLogoDuotone />
               </a>
-              <a href="">
+              <a href="https://www.linkedin.com/in/aravind-tham/">
                 <PiLinkedinLogoDuotone />
               </a>
-              <a href="">
+              <a href="https://www.instagram.com/arav_ind_0725/">
                 <PiInstagramLogoDuotone />
               </a>
-              <a href="">
+              <a href="mailto:tjsaravind@gmail.com">
                 <MdOutlineMail />
               </a>
             </div>

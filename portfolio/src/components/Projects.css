@@ -1,4 +1,14 @@
 
+.main-p {
+    font-family: 'Chakra Petch', sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-color: transparent transparent;
+    padding-top: 5rem;    
+}
+
 .title{
     font-family: 'Chakra Petch', sans-serif;
     color: var(--primary-color-1);
@@ -7,6 +17,7 @@
 }
 
 .main-body-p{
+    font-family: 'Chakra Petch', sans-serif;
     display: flex;
     flex-direction: column;
     overflow: hidden;
