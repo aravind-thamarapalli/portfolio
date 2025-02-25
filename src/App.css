@@ -1,42 +1,125 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+
+
+:root {
+  --primary-color: #3A5A40;
+  --secondary-color: #FAF3E0;
+  --accent-color: #222;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Unica One', sans-serif;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 96vh;
+  padding: 0 50px;  
+  background-color: var(--primary-color);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-links {
+  display: flex;
+  align-items: center;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
 }
 
-.card {
-  padding: 2em;
+.nav-links a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
-.read-the-docs {
-  color: #888;
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  background-color: var(--primary-color);
+}
+
+.hero h1 {
+  color: var(--accent-color);
+  font-size: 10rem;
+  font-weight: bold;
+}
+
+.footer-divs {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  gap: 1rem;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--accent-color);
+  background-color: var(--primary-color);
+}
+
+.footer-div a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: var(--accent-color);
+}
+
+.project-tab {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--accent-color);
+  padding-top: 50px;
+  height: 150vh;
+}
+
+.project-tab h2 {
+  padding: 0 50px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100%;
+}
+
+.project-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
 }
