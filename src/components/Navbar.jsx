@@ -1,21 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ color }) => {
   return (
-    <div>
-      <nav className='navbar'>
-        <h1 className='logo'>Aravind Thamarapalli</h1>
-        <ul className='nav-links'>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/about">About</a>
-          </li>
+    <nav className="navbar" style={{ color: color }}>
+      <h1 className="logo">Aravind Thamarapalli</h1>
+      <ul className="nav-links">
+        <li><Link to="/" style={{ color: color }}>Home</Link></li>
+        <li><Link to="/about" style={{ color: color }}>About</Link></li>
       </ul>
-      </nav>
-    </div>
-  )
-}
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;

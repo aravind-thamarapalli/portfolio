@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name": "Project One",
+        "description": "A brief description of project one.",
+        "technologies": ["Tech1", "Tech2"],
+        "repository": "https://github.com/username/project-one",
+        "liveDemo": "https://live-demo-url.com/project-one",
+        "image": "https://www.jonasreymondin.com/img/projects/small/01-FACTRY-min.jpg?webp"
+    },
+    {
+        "id": 2,
+        "name": "Project Four",
+        "description": "A brief description of project four.",
+        "technologies": ["Tech3", "Tech4"],
+        "repository": "https://github.com/username/project-four",
+        "liveDemo": "https://live-demo-url.com/project-four",
+        "image": "https://www.jonasreymondin.com/img/projects/small/01-FACTRY-min.jpg?webp"
+    },
+    {
+        "id": 3,
+        "name": "Project Six",
+        "description": "A brief description of project six.",
+        "technologies": ["Tech3", "Tech4"],
+        "repository": "https://github.com/username/project-six",
+        "liveDemo": "https://live-demo-url.com/project-six",
+        "image": "https://www.jonasreymondin.com/img/projects/small/01-FACTRY-min.jpg?webp"
+    },
+    {
+        "id": 4,
+        "name": "Project Seven",
+        "description": "A brief description of project seven.",
+        "technologies": ["Tech3", "Tech4"],
+        "repository": "https://github.com/username/project-seven",
+        "liveDemo": "https://live-demo-url.com/project-seven",
+        "image": "https://www.jonasreymondin.com/img/projects/small/01-FACTRY-min.jpg?webp"
+    },
+    {
+        "id": 5,
+        "name": "Project Nine",
+        "description": "A brief description of project nine.",
+        "technologies": ["Tech3", "Tech4"],
+        "repository": "https://github.com/username/project-nine",
+        "liveDemo": "https://live-demo-url.com/project-nine",
+        "image": "https://www.jonasreymondin.com/img/projects/small/01-FACTRY-min.jpg?webp"
+    },
+    {
+        "id": 6,
+        "name": "Project Eleven",
+        "description": "A brief description of project eleven.",
+        "technologies": ["Tech1", "Tech2"],
+        "repository": "https://github.com/username/project-eleven",
+        "liveDemo": "https://live-demo-url.com/project-eleven",
+        "image": "https://www.jonasreymondin.com/img/projects/small/01-FACTRY-min.jpg?webp"
+    },
+    {
+        "id": 7,
+        "name": "Project Fourteen",
+        "description": "A brief description of project fourteen.",
+        "technologies": ["Tech3", "Tech4"],
+        "repository": "https://github.com/username/project-fourteen",
+        "liveDemo": "https://live-demo-url.com/project-fourteen",
+        "image": "https://www.jonasreymondin.com/img/projects/small/01-FACTRY-min.jpg?webp"
+    },
+    {
+        "id": 8,
+        "name": "Project Sixteen",
+        "description": "A brief description of project fifteen.",
+        "technologies": ["Tech3", "Tech4"],
+        "repository": "https://github.com/username/project-fifteen",
+        "liveDemo": "https://live-demo-url.com/project-fifteen",
+        "image": "https://www.jonasreymondin.com/img/projects/small/01-FACTRY-min.jpg?webp"
+    }
+]

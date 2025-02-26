@@ -1,78 +1,42 @@
-import React from 'react'
-import { FaEnvelope, FaLinkedinIn, FaGithub } from 'react-icons/fa'
+import React, { useState, useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Projects from './Projects';
+
 
 const Hero = () => {
+    const [navColor, setNavColor] = useState("#111"); // Default navbar text color
+  const [prevScroll, setPrevScroll] = useState(0); // Store previous scroll position
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      // Smoothly update navbar color based on scroll
+      if (scrollPosition < window.innerHeight / 1.1) {
+        setNavColor("#111"); // Dark text at top
+      } else {
+        setNavColor("#3A5A40"); // Change when scrolling
+      }
+
+      setPrevScroll(scrollPosition);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-    <div className='home'>
-        <div className='hero'>
-            <h1>A Mern Stack</h1>
-            <h1>Developer</h1>
+        <Navbar color={navColor} />
+      <div className="home">
+        <div className="hero">
+          <h1>A Mern Stack</h1>
+          <h1>Developer</h1>
         </div>
-        <footer>
-            <h2>Lets Connect</h2>
-            <div className="footer-divs">
-                <div className="footer-div">
-                    <a href="">
-                    <FaEnvelope />
-                    </a>
-                </div>
-                <div className="footer-div">
-                    <a href="">
-                    <FaLinkedinIn />
-                    </a>
-                </div>
-                <div className="footer-div">
-                    <a href="">
-                    <FaGithub />
-                    </a>
-                </div>
-            </div>
-        </footer>
-        </div>
-        <div className="project-tab">
-            <h2>Projects</h2>
-        <div className="projects">
-            <div className="project-div">
-                <h3>Project 1</h3>
-                <p>Project 1 description</p>
-            </div>
-            <div className="project-div">
-                <h3>Project 2</h3>
-                <p>Project 2 description</p>
-            </div>
-            <div className="project-div">
-                <h3>Project 3</h3>
-                <p>Project 3 description</p>
-            </div>
-            <div className="project-div">
-                <h3>Project 1</h3>
-                <p>Project 1 description</p>
-            </div>
-            <div className="project-div">
-                <h3>Project 2</h3>
-                <p>Project 2 description</p>
-            </div>
-            <div className="project-div">
-                <h3>Project 3</h3>
-                <p>Project 3 description</p>
-            </div>
-            <div className="project-div">
-                <h3>Project 1</h3>
-                <p>Project 1 description</p>
-            </div>
-            <div className="project-div">
-                <h3>Project 2</h3>
-                <p>Project 2 description</p>
-            </div>
-            <div className="project-div">
-                <h3>Project 3</h3>
-                <p>Project 3 description</p>
-            </div>
-        </div>
-        </div>
+      </div>
+      <Projects />
     </>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
