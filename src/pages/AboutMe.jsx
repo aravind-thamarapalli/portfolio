@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar';
+import { GoArrowUpRight } from "react-icons/go";
+
 
 const AboutMe = () => {
   const [navColor, setNavColor] = useState("#FAF3E0"); // Default navbar text color
@@ -59,11 +61,15 @@ const AboutMe = () => {
         </div>
       </div>
       <div className="get-conn">
+        <div className="get-conn-1">
         <h2 className='get-conn-h2'>Get In Touch</h2>
         <p className='get-conn-p'>I’m currently open to new opportunities and collaborations. Whether you’re looking for a developer, designer, or tech enthusiast, I’d love to chat. Feel free to reach out via email or LinkedIn.</p>
+        </div>
         <div className="get-conn-links">
-          <a href="mailto:tjsaravind77@gmail.com" className='get-conn-email'>Email Me</a>
-          <a href="https://www.linkedin.com/in/aravind-tham/" className='get-conn-linkedin'>LinkedIn</a>
+          <a href="mailto:tjsaravind77@gmail.com" className='get-conn-link'><p>Email Me</p> <GoArrowUpRight className='get-conn-i' /></a>
+          <a href="https://www.linkedin.com/in/aravind-tham/" className='get-conn-link'><p>LinkedIn</p> <GoArrowUpRight className='get-conn-i' /></a>
+          <a href="https://github.com/aravind-thamarapalli" className='get-conn-link'><p>GitHub</p> <GoArrowUpRight className='get-conn-i' /></a>
+          <a href="https://www.instagram.com/aravind_thamarapalli/" className='get-conn-link'><p>Instagram</p> <GoArrowUpRight className='get-conn-i' /></a>
           </div>
       </div>
     </div>

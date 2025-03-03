@@ -30,8 +30,30 @@ const Hero = () => {
         <Navbar color={navColor} />
       <div className="home">
         <div className="hero">
+          <div className="hero-name">
           <h1>A Mern Stack</h1>
           <h1>Developer</h1>
+          </div>
+          <div className="hero-des">
+            <h2>PortFolio:01</h2>
+            <div className="hero-data">
+              <div className="hero-data-t">
+                <p className='hero-data-td'>Availability</p>
+                <p>Full Time</p>
+              </div>
+              <div className="hero-data-t">
+                <p className='hero-data-td'>Contact</p>
+                <p>tjsaravind77@gmail.com</p>
+              </div>
+              <div className="hero-data-t">
+                <p className='hero-data-td'>Location</p>
+                <p>17.6800N, 83.2016E</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="hero-img">
+          <img src="src\assets\main.png" alt="img" />
         </div>
       </div>
       <Projects />

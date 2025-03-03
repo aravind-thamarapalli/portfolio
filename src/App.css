@@ -15,12 +15,22 @@
 
 .home {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  min-height: 96vh;
-  padding: 0 50px;
-  padding-top: 80px;
+  height: 96vh;
+  padding: 80px 50px 0;
   background-color: var(--primary-color);
+}
+
+.hero-img {
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-img img {
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
 }
 
 .navbar {
@@ -34,16 +44,14 @@
   top: 0;
   left: 0;
   z-index: 9999;
-  transition: color 0.3s ease-in-out; /* Smooth transition for text color */
+  transition: color 0.3s ease-in-out;
 }
 
 .nav-links a {
   text-decoration: none;
   font-size: 1.2rem;
-  transition: color 0.3s ease-in-out; /* Apply smooth color transition */
+  transition: color 0.3s ease-in-out;
 }
-
-
 
 .logo {
   font-size: 1.5rem;
@@ -72,7 +80,7 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-self: first baseline;
   background-color: var(--primary-color);
 }
 
@@ -90,18 +98,28 @@ ul {
   gap: 1rem;
 }
 
-footer {
+.hero-des {
+  padding-top: 50px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  color: var(--accent-color);
-  background-color: var(--primary-color);
 }
 
-.footer-div a {
-  text-decoration: none;
+.hero-data {
+  display: flex;
+  gap: 2rem;
+}
+
+.hero-data-t {
   font-size: 1.2rem;
-  color: var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hero-data-td {
+  font-size: 1.2rem;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .project-tab {
@@ -109,7 +127,7 @@ footer {
   flex-direction: column;
   min-height: 100vh;
   background-color: var(--accent-color);
-  padding-top: 50px;
+  padding: 50px 0 0;
 }
 
 .project-tab h2 {
@@ -132,7 +150,7 @@ footer {
   justify-content: center;
   align-items: center;
   height: 40vh;
-  text-align: center; /* Center text properly */
+  text-align: center;
   color: var(--secondary-color);
   border: none;
 }
@@ -149,16 +167,13 @@ footer {
   filter: grayscale(0);
 }
 
-/* ABOUT ME PAGE */
-
 .about-me {
   display: flex;
   flex-direction: column;
-  align-items: end;
-  padding: 0 50px;
+  align-items: flex-end;
+  padding: 80px 50px 0;
   min-height: 100vh;
   background-color: var(--accent-color);
-  padding-top: 80px;
   color: var(--secondary-color);
 }
 
@@ -170,8 +185,7 @@ footer {
 .about-me-des {
   background-color: var(--secondary-color);
   height: 100vh;
-  padding: 0 100px;
-  padding-top: 80px;
+  padding: 80px 100px 0;
 }
 
 .a-m-des1 {
@@ -187,14 +201,12 @@ footer {
   width: 50%;
 }
 
-/* Tech Stack */
 .tech-stack {
   display: flex;
   flex-direction: column;
-  padding: 0 50px;
+  padding: 80px 50px 0;
   min-height: 100vh;
   background-color: var(--accent-color);
-  padding-top: 80px;
   color: var(--secondary-color);
 }
 
@@ -224,7 +236,170 @@ footer {
   padding: 1rem 50px;
 }
 
-/* Responsive Adjustments */
+.get-conn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 80px 50px 0;
+  min-height: 100vh;
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+}
+
+.get-conn-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.get-conn-h2 {
+  font-size: clamp(3rem, 10vw, 10rem);
+  font-weight: bold;
+  align-self: flex-end;
+}
+
+.get-conn-p {
+  padding: 1rem 50px;
+  font-size: 1.5rem;
+}
+
+.get-conn-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1rem 50px;
+}
+
+.get-conn-link {
+  font-size: 6rem;
+  text-decoration: none;
+  color: var(--accent-color);
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+}
+
+.get-conn-i {
+  font-weight: bold;
+}
+
+.p-t {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-left: 50px;
+}
+
+.p-d {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.p-nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.p-nav p {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close {
+  opacity: 60%;
+  transition: all 0.3s ease-in-out;
+}
+
+.close:hover {
+  opacity: 100%;
+}
+
+.p-d1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.p-t-des {
+  font-size: 2rem;
+}
+
+.p-t-name {
+  font-size: 5rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.p-t-l {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.p-t-l1 ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.p-t-l1 h3 {
+  font-size: 1.5rem;
+  padding-bottom: 20px;
+}
+
+.p-t-tech {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.p-t-r {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100vh;
+}
+
+.p-t-r img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-t-links {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.p-t-links a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+.p-navigator {
+  display: flex;
+  padding: 1rem 2rem;
+  align-self: center;
+  gap: 1rem;
+}
+
+.p-navigator p {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--accent-color);
+}
+
 @media (max-width: 1024px) {
   .projects {
     grid-template-columns: repeat(2, 1fr);
@@ -233,15 +408,14 @@ footer {
 
 @media (max-width: 768px) {
   .projects {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .hero h1 {
-    font-size: clamp(2rem, 8vw, 6rem);
+    font-size: clamp(5rem, 2vw, 10rem);
   }
 
   .navbar {
-    flex-direction: column;
     padding: 1rem;
   }
 
@@ -254,12 +428,20 @@ footer {
     flex-direction: column;
     text-align: center;
   }
-}
 
-@media (max-width: 768px) {
   .home {
-    padding: 0 20px;
-    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 20px 0;
+  }
+
+  .hero {
+    padding: 60px 20px 0;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 50vh;
   }
 
   .project-tab h2 {
@@ -272,8 +454,7 @@ footer {
   }
 
   .about-me {
-    padding: 0 20px;
-    padding-top: 60px;
+    padding: 60px 20px 0;
   }
 
   .about-me-h2 {
@@ -281,8 +462,7 @@ footer {
   }
 
   .about-me-des {
-    padding: 0 20px;
-    padding-top: 60px;
+    padding: 60px 20px 0;
   }
 
   .a-m-des1, .a-m-des2 {
@@ -291,8 +471,7 @@ footer {
   }
 
   .tech-stack {
-    padding: 0 20px;
-    padding-top: 60px;
+    padding: 60px 20px 0;
   }
 
   .tech-stack h2 {
@@ -305,5 +484,14 @@ footer {
 
   .tech-d {
     padding: 1rem 20px;
+  }
+
+  .get-conn-link {
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--accent-color);
+    align-items: center;
+    display: flex;
+    font-weight: bold;
   }
 }
