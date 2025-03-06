@@ -9,11 +9,14 @@ const ProjectTab = () => {
   const id = data.state.id;
   const item = projectData[id];
     const navigate = useNavigate();
+  const isFirstProject = id === 0;
+  const isLastProject = id === projectData.length - 1;
+
   return (
     <div>
       <nav className="p-nav">
         <p onClick={() => {navigate("/")}}>Aravind Thamarapalli</p>
-        <p onClick={() => {navigate(-1)}} className="close">close</p>
+        <p onClick={() => {navigate("/")}} className="close">close</p>
       </nav>
       <div className="p-t">
         <h2 className="p-t-name">{item.name}</h2>
@@ -41,8 +44,8 @@ const ProjectTab = () => {
           </div>
           <div className="p-t-r">
             <div className="p-navigator">
-                <p onClick={() => navigate("/project", { state: { item: project } })}>Previous</p>
-                <p onClick={() => navigate("/project", { state: { item: project } })}>Next</p>
+                {!isFirstProject && <p onClick={() => navigate("/project", { state: { id: id - 1 } })}>Previous</p>}
+                {!isLastProject && <p onClick={() => navigate("/project", { state: { id: id + 1 } })}>Next</p>}
             </div>
             <img src={item.image} alt="project" />
           </div>

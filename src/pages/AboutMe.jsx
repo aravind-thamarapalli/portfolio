@@ -42,8 +42,13 @@ const AboutMe = () => {
     <div>
       <Navbar color={navColor} />
       <div className="about-me">
+        <div className="about-me1">
         <h1 className='about-me-h2'>A Closer Look</h1>
         <h1 className='about-me-h2'>At Me</h1>
+        </div>
+        <div className="hero-img">
+          <img src="src\assets\main.png" alt="img" />
+        </div>
       </div>
       <div className="about-me-des">
         <p className='a-m-des1'>I’m a front-end developer and UX/UI enthusiast who crafts seamless, interactive web experiences. With expertise in MERN stack, I build intuitive apps like form builders, chat platforms, and grocery delivery systems. Passionate about clarity, performance, and emerging tech, I blend design, motion, and functionality to create impactful digital solutions.</p>

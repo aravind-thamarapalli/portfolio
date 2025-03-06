@@ -52,9 +52,6 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="hero-img">
-          <img src="src\assets\main.png" alt="img" />
-        </div>
       </div>
       <Projects />
     </>
