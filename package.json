@@ -12,6 +12,7 @@
   "dependencies": {
     "lucide-react": "^0.476.0",
     "react": "^19.0.0",
+    "react-awesome-shapes": "^0.1.6",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.2.0"

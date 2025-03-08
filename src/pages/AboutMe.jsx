@@ -43,16 +43,21 @@ const AboutMe = () => {
       <Navbar color={navColor} />
       <div className="about-me">
         <div className="about-me1">
-        <h1 className='about-me-h2'>A Closer Look</h1>
-        <h1 className='about-me-h2'>At Me</h1>
+          <h1 className='about-me-h2'>A Closer Look</h1>
+          <h1 className='about-me-h2'>At Me</h1>
         </div>
-        <div className="hero-img">
+        <div className="about-me-img">
           <img src="src\assets\main.png" alt="img" />
         </div>
       </div>
       <div className="about-me-des">
-        <p className='a-m-des1'>I’m a front-end developer and UX/UI enthusiast who crafts seamless, interactive web experiences. With expertise in MERN stack, I build intuitive apps like form builders, chat platforms, and grocery delivery systems. Passionate about clarity, performance, and emerging tech, I blend design, motion, and functionality to create impactful digital solutions.</p>
-        <p className='a-m-des2'>I am Aravind, a creative front-end and full-stack developer with experience in MERN stack, UX/UI design, and interactive web applications. I’ve built custom solutions like form builders, chat platforms, and AI-powered projects. Passionate about innovation and performance, I actively organize tech events and collaborate on projects that push the boundaries of design and functionality.</p>
+        <div className="about-me-des-main">
+          <p className='a-m-des1'>I’m a front-end developer and UX/UI enthusiast who crafts seamless, interactive web experiences. With expertise in MERN stack, I build intuitive apps like form builders, chat platforms, and grocery delivery systems. Passionate about clarity, performance, and emerging tech, I blend design, motion, and functionality to create impactful digital solutions.</p>
+          <p className='a-m-des2'>I am Aravind, a creative front-end and full-stack developer with experience in MERN stack, UX/UI design, and interactive web applications. I’ve built custom solutions like form builders, chat platforms, and AI-powered projects. Passionate about innovation and performance, I actively organize tech events and collaborate on projects that push the boundaries of design and functionality.</p>
+        </div>
+        <div className="about-me-des-img">
+
+        </div>
       </div>
       <div className="tech-stack">
         <h2 className='tech-stack-h2'>What I Know</h2>
@@ -67,15 +72,15 @@ const AboutMe = () => {
       </div>
       <div className="get-conn">
         <div className="get-conn-1">
-        <h2 className='get-conn-h2'>Get In Touch</h2>
-        <p className='get-conn-p'>I’m currently open to new opportunities and collaborations. Whether you’re looking for a developer, designer, or tech enthusiast, I’d love to chat. Feel free to reach out via email or LinkedIn.</p>
+          <h2 className='get-conn-h2'>Get In Touch</h2>
+          <p className='get-conn-p'>I’m currently open to new opportunities and collaborations. Whether you’re looking for a developer, designer, or tech enthusiast, I’d love to chat. Feel free to reach out via email or LinkedIn.</p>
         </div>
         <div className="get-conn-links">
           <a href="mailto:tjsaravind77@gmail.com" className='get-conn-link'><p>Email Me</p> <GoArrowUpRight className='get-conn-i' /></a>
           <a href="https://www.linkedin.com/in/aravind-tham/" className='get-conn-link'><p>LinkedIn</p> <GoArrowUpRight className='get-conn-i' /></a>
           <a href="https://github.com/aravind-thamarapalli" className='get-conn-link'><p>GitHub</p> <GoArrowUpRight className='get-conn-i' /></a>
           <a href="https://www.instagram.com/aravind_thamarapalli/" className='get-conn-link'><p>Instagram</p> <GoArrowUpRight className='get-conn-i' /></a>
-          </div>
+        </div>
       </div>
     </div>
   );
