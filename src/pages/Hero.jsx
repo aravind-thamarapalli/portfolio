@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Projects from './Projects';
+import PageWrapper from "../components/PageWrapper";
 
 
 const Hero = () => {
@@ -13,9 +14,9 @@ const Hero = () => {
 
       // Smoothly update navbar color based on scroll
       if (scrollPosition < window.innerHeight / 1.1) {
-        setNavColor("#111"); // Dark text at top
+        setNavColor("#2e2e2e"); // Dark text at top
       } else {
-        setNavColor("#3A5A40"); // Change when scrolling
+        setNavColor("#F2DE9B"); // Change when scrolling
       }
 
       setPrevScroll(scrollPosition);
@@ -26,8 +27,9 @@ const Hero = () => {
   }, []);
 
   return (
-    <>
-        <Navbar color={navColor} />
+    <PageWrapper>
+      <>
+      <Navbar color={navColor} />
       <div className="home">
         <div className="hero">
           <div className="hero-name">
@@ -55,6 +57,7 @@ const Hero = () => {
       </div>
       <Projects />
     </>
+    </PageWrapper>
   );
 };
 

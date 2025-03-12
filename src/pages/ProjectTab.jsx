@@ -6,6 +6,7 @@ import { GoArrowUpRight } from "react-icons/go";
 import { motion } from "framer-motion";
 import projectData from "../projects.json";
 import LoadingPage from "../components/LoadingPage";
+import  PageWrapper from "../components/PageWrapper";
 
 const ProjectTab = () => {
   const data = useLocation();
@@ -13,103 +14,127 @@ const ProjectTab = () => {
   const id = data.state?.id ?? 0;
   const item = projectData[id];
 
-  const [isLoading, setIsLoading] = useState(true); // Manage loading state
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);  // Start loading
+    setIsLoading(true);
     const timeout = setTimeout(() => {
-      setIsLoading(false); // Stop loading after delay
-    }, 100); // Show loading screen for 1.5 seconds
+      setIsLoading(false);
+    }, 100);
 
-    return () => clearTimeout(timeout); // Cleanup on unmount
-  }, [id]); // Run when the project ID changes
+    return () => clearTimeout(timeout);
+  }, [id]);
 
   if (!item) return <div>Project not found</div>;
 
   return isLoading ? (
-    <LoadingPage /> // Show your custom loading page
+    <LoadingPage />
   ) : (
-    <motion.div
-      className="project-t"
-      style={{
-        backgroundColor: item.bgColor,
-        color: item.color || "#000",
-        borderColor: item.color || "#ccc"
-      }}
-      initial={{ opacity: 0, x: 50 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -50 }}
-      transition={{ duration: 0.4, ease: "easeInOut" }}
-    >
-      <nav className="p-nav">
-        <p onClick={() => navigate("/")}>Aravind Thamarapalli</p>
-        <p onClick={() => navigate("/")} className="close">Close</p>
-      </nav>
-      <div className="p-t">
-        <h2 className="p-t-name">{item.name}</h2>
-        <div className="p-d">
-          <div className="p-d1">
-            <div className="p-t-l">
-              <p className="p-t-des">{item.description}</p>
-              <div className="p-t-l1">
-                <h3>Techstack Used</h3>
-                <ul>
-                  {item.technologies.map((tech, index) => (
-                    <li key={index} className="p-t-tech">
-                      <IoIosArrowForward />
-                      <p>{tech}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="p-t-links">
-              <a
-                href={item.github || "#"}
-                target={item.github ? "_blank" : "_self"}
-                rel="noopener noreferrer"
-                className={`p-t-l ${!item.github ? "disabled-link" : ""}`}
-              >
-                <p style={{color: item.color || "#ccc"}}>GitHub</p><GoArrowUpRight style={{color: item.color || "#ccc"}} />
-              </a>
-              <a
-                href={item.demo || "#"}
-                target={item.demo ? "_blank" : "_self"}
-                rel="noopener noreferrer"
-                className={`p-t-l ${!item.demo ? "disabled-link" : ""}`}
-              >
-                <p style={{color: item.color || "#ccc"}}>Live Demo</p><GoArrowUpRight style={{color: item.color || "#ccc"}} />
-              </a>
-            </div>
-          </div>
-          <div className="p-t-r">
-            <div className="p-navigator">
-              {id > 0 && (
-                <p onClick={() => navigate("/project", { state: { id: id - 1 } })} style={{borderColor: item.color || "#ccc"}}>
-                  Previous
-                </p>
+    <PageWrapper>
+      <motion.div
+        className="project-t"
+        style={{
+          backgroundColor: item.bgColor,
+          color: item.color || "#000",
+          borderColor: item.color || "#ccc",
+        }}
+      >
+        {/* Navbar */}
+        <motion.nav className="p-nav">
+          <p onClick={() => navigate("/")}>Aravind Thamarapalli</p>
+          <p onClick={() => navigate("/")} className="close">Close</p>
+        </motion.nav>
+
+        {/* Project Content */}
+        <motion.div className="p-t">
+          <motion.h2 className="p-t-name">
+            {item.name}
+          </motion.h2>
+
+          <motion.div className="p-d">
+            <motion.div className="p-d1">
+              {/* Description */}
+              <motion.div className="p-t-l">
+                <p className="p-t-des">{item.description}</p>
+
+                {/* Techstack Used */}
+                <motion.div className="p-t-l1">
+                  <h3>Techstack Used</h3>
+                  <ul>
+                    {item.technologies.map((tech, index) => (
+                      <motion.li key={index} className="p-t-tech">
+                        <IoIosArrowForward />
+                        <p>{tech}</p>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </motion.div>
+
+              {/* Links */}
+              <motion.div className="p-t-links">
+                <a
+                  href={item.github || "#"}
+                  target={item.github ? "_blank" : "_self"}
+                  rel="noopener noreferrer"
+                  className={`p-t-l ${!item.github ? "disabled-link" : ""}`}
+                >
+                  <p style={{ color: item.color || "#ccc" }}>GitHub</p>
+                  <GoArrowUpRight style={{ color: item.color || "#ccc" }} />
+                </a>
+                <a
+                  href={item.demo || "#"}
+                  target={item.demo ? "_blank" : "_self"}
+                  rel="noopener noreferrer"
+                  className={`p-t-l ${!item.demo ? "disabled-link" : ""}`}
+                >
+                  <p style={{ color: item.color || "#ccc" }}>Live Demo</p>
+                  <GoArrowUpRight style={{ color: item.color || "#ccc" }} />
+                </a>
+              </motion.div>
+            </motion.div>
+
+            {/* Image & Navigation */}
+            <motion.div className="p-t-r">
+              <motion.div className="p-navigator">
+                {id > 0 && (
+                  <motion.p
+                    onClick={() => navigate("/project", { state: { id: id - 1 } })}
+                    style={{ borderColor: item.color || "#ccc" }}
+                   
+                  >
+                    Previous
+                  </motion.p>
+                )}
+                {id < projectData.length - 1 && (
+                  <motion.p
+                    onClick={() => navigate("/project", { state: { id: id + 1 } })}
+                    style={{ borderColor: item.color || "#ccc" }}
+                   
+                  >
+                    Next
+                  </motion.p>
+                )}
+              </motion.div>
+
+              {item.image && (
+                <motion.img src={item.image} alt={item.name} loading="lazy" />
               )}
-              {id < projectData.length - 1 && (
-                <p onClick={() => navigate("/project", { state: { id: id + 1 } })} style={{borderColor: item.color || "#ccc"}}>
-                  Next
-                </p>
-              )}
-            </div>
-            {item.image && <img src={item.image} alt={item.name} loading="lazy" />}
-          </div>
-        </div>
-      </div>
-    </motion.div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </PageWrapper>
   );
 };
 
 ProjectTab.propTypes = {
   data: PropTypes.shape({
     state: PropTypes.shape({
-      id: PropTypes.number
-    })
+      id: PropTypes.number,
+    }),
   }),
-  navigate: PropTypes.func
+  navigate: PropTypes.func,
 };
 
 export default ProjectTab;

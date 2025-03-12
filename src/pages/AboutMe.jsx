@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar';
 import { GoArrowUpRight } from "react-icons/go";
+import EduStepper from '../components/EduStepper';
 
 
 const AboutMe = () => {
@@ -14,9 +15,9 @@ const AboutMe = () => {
 
       // Smoothly update navbar color based on scroll
       if (scrollPosition < window.innerHeight / 1.1) {
-        setNavColor("#FAF3E0"); // Dark text at top
+        setNavColor("#D6CFE1"); // Dark text at top
       } else {
-        setNavColor("#111"); // Change when scrolling
+        setNavColor("#2e2e2e"); // Change when scrolling
       }
 
       setPrevScroll(scrollPosition);
@@ -52,11 +53,12 @@ const AboutMe = () => {
       </div>
       <div className="about-me-des">
         <div className="about-me-des-main">
-          <p className='a-m-des1'>I’m a front-end developer and UX/UI enthusiast who crafts seamless, interactive web experiences. With expertise in MERN stack, I build intuitive apps like form builders, chat platforms, and grocery delivery systems. Passionate about clarity, performance, and emerging tech, I blend design, motion, and functionality to create impactful digital solutions.</p>
-          <p className='a-m-des2'>I am Aravind, a creative front-end and full-stack developer with experience in MERN stack, UX/UI design, and interactive web applications. I’ve built custom solutions like form builders, chat platforms, and AI-powered projects. Passionate about innovation and performance, I actively organize tech events and collaborate on projects that push the boundaries of design and functionality.</p>
-        </div>
+          <h1 className='a-m-des1'>MY EDUCATION</h1>
+          <div className="a-m-edu">
+            <EduStepper />
+          </div>
+          </div>
         <div className="about-me-des-img">
-
         </div>
       </div>
       <div className="tech-stack">
