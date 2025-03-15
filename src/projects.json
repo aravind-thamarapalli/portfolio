@@ -6,7 +6,7 @@
         "technologies": ["React", "Node.js", "Express", "MongoDB"],
         "repository": "https://github.com/aravind-thamarapalli/movie-booking-site",
         "liveDemo": "https://show-time-tau.vercel.app/",
-        "image": "src/assets/1.svg",
+        "image": "./src/assets/1.svg",
         "bgColor": "#F5F5F5",
         "color": "#424242"
     },
@@ -17,7 +17,7 @@
         "technologies": ["React", "Node.js", "Express", "MongoDB", "tailwindcss"],
         "repository": "https://github.com/aravind-thamarapalli/save-code",
         "liveDemo": "https://save-code-psi.vercel.app/",
-        "image": "src/assets/2.svg",
+        "image": "./src/assets/2.svg",
         "bgColor": "#E3F2FD",
         "color": "#0D47A1"
     },
@@ -28,7 +28,7 @@
         "technologies": ["React", "Node.js", "Express", "MongoDB"],
         "repository": "https://github.com/username/zomato",
         "liveDemo": "https://zomato-murex-six.vercel.app/",
-        "image": "src/assets/3.svg",
+        "image": "./src/assets/3.svg",
         "bgColor": "#C2A48A",
         "color": "#3B3B3B"
     },
@@ -39,7 +39,7 @@
         "technologies": ["React", "CSS3"],
         "repository": "https://github.com/username/youtube-clone",
         "liveDemo": "https://youtube-clone-umber-two.vercel.app/",
-        "image": "src/assets/4.svg",
+        "image": "./src/assets/4.svg",
         "bgColor": "#FFF9C4",
         "color": "#E65100"
     },
@@ -50,7 +50,7 @@
         "technologies": ["React", "Node.js", "Express", "MongoDB"],
         "repository": "https://github.com/username/mern-buyzit",
         "liveDemo": "https://mern-buyzit.vercel.app/",
-        "image": "src/assets/5.svg",
+        "image": "./src/assets/5.svg",
         "bgColor": "#D9A679",
         "color": "#2E4A3D"
     }
