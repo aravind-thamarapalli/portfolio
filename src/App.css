@@ -24,6 +24,13 @@
   background-color: var(--primary-color);
 }
 
+/* CROSSES */
+.crosses {
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem;
+}
+
 /* Navbar */
 .navbar {
   display: flex;
@@ -47,7 +54,7 @@
 .nav-links a {
   color: var(--accent-color);
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   transition: color 0.3s ease-in-out;
 }
 
@@ -71,30 +78,37 @@ ul {
   align-self: first baseline;
   background-color: var(--primary-color);
   width: 100%;
+  overflow: hidden;
 }
 
-.hero h1 {
+.hero-name {
   color: var(--accent-color);
-  font-size: clamp(3rem, 10vw, 10rem);
+  font-size: 10rem;
   font-weight: bold;
   padding: 0 50px;
+  overflow: hidden;
+
 }
 
 .hero-des {
   padding-top: 50px;
   display: flex;
+  color: var(--accent-color);
   justify-content: space-around;
   align-items: center;
+  overflow: hidden;
 }
 
 .hero-des h2 {
   font-size: 5rem;
   font-weight: bold;
+  overflow: hidden;
 }
 
 .hero-data {
   display: flex;
   gap: 10rem;
+  overflow: hidden;
 }
 
 .hero-data-t {
@@ -102,12 +116,14 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  overflow: hidden;
 }
 
 .hero-data-td {
   font-size: 1.2rem;
   text-decoration: underline;
   font-weight: bold;
+  overflow: hidden;
 }
 
 /* Project Section */
@@ -199,7 +215,7 @@ ul {
 
 .about-me-des {
   background-color: var(--secondary-color);
-  height: 96vh;
+  height: 92vh;
   padding: 80px 100px 0;
 }
 
@@ -216,7 +232,7 @@ ul {
   display: flex;
   flex-direction: column;
   padding: 80px 50px 0;
-  height: 96vh;
+  height: 92vh;
   background-color: var(--accent-color);
   color: var(--secondary-color);
 }
@@ -419,29 +435,68 @@ ul {
   border: 1px solid var(--accent-color);
 }
 
-/* Loading Page */
 
+/* Loading Page */
 .loading-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0f0f0;
-  color: #333;
-  font-size: 1.5rem;
+  width: 100vw;
+  background: linear-gradient(135deg, #1e1e1e, #333); /* Dark gradient background */
+  color: #f2de9b; /* Gold accent color */
+  font-size: 2rem;
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  overflow: hidden;
+  position: relative;
 }
 
-.spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid #ddd;
-  border-top-color: #555;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 20px;
+/* Subtle glowing text animation */
+.loading-container p {
+  position: relative;
+  display: inline-block;
+  animation: glow 1.5s ease-in-out infinite alternate;
 }
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 223, 112, 0.5), 0 0 20px rgba(255, 223, 112, 0.3);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 223, 112, 0.9), 0 0 30px rgba(255, 223, 112, 0.6);
+  }
+}
+
+/* Adding an animated overlay effect */
+.loading-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Smooth fade-in effect for the text */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.loading-container p {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
 
 @keyframes spin {
   from {

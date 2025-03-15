@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "./EduStepper.css"; // Import CSS for styling
 
 const educationData = [
-  { title: "School", institution: "[Your School Name]", stream: "General", timeline: "[Start Year] - [End Year]" },
-  { title: "Intermediate", institution: "[Your College Name]", stream: "[Your Stream]", timeline: "[Start Year] - [End Year]" },
-  { title: "B.Tech", institution: "GVP College of Engineering (A)", stream: "[Your Specialization]", timeline: "[Start Year] - [End Year]" },
+  { title: "School", institution: "SHARON EM HIGH SCHOOL", stream: "SSC", timeline: "2020" },
+  { title: "Intermediate", institution: "SRI CHAITANYA JR COLLEGE", stream: "M.P.C", timeline: "2020-2022" },
+  { title: "UNDER GRADUATION", institution: "GVP College of Engineering (A)", stream: "B.TECH (CSE)", timeline: "2022-TILL" },
 ];
 
 const EducationStepper = () => {

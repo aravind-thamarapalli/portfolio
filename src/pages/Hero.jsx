@@ -1,63 +1,106 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar';
-import Projects from './Projects';
-import PageWrapper from "../components/PageWrapper";
+import React, { useState, useEffect } from "react";
+import Navbar from "../components/Navbar";
+import Projects from "./Projects";
+import LoadingPage from "../components/LoadingPage";
+import { motion } from "framer-motion";
 
+const letterAnimation = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.05 } },
+};
+
+const textContainer = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+};
 
 const Hero = () => {
-    const [navColor, setNavColor] = useState("#111"); // Default navbar text color
-  const [prevScroll, setPrevScroll] = useState(0); // Store previous scroll position
+  const [navColor, setNavColor] = useState("#111");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-
-      // Smoothly update navbar color based on scroll
-      if (scrollPosition < window.innerHeight / 1.1) {
-        setNavColor("#2e2e2e"); // Dark text at top
-      } else {
-        setNavColor("#F2DE9B"); // Change when scrolling
-      }
-
-      setPrevScroll(scrollPosition);
+      setNavColor(window.scrollY < window.innerHeight / 1.1 ? "#2e2e2e" : "#F2DE9B");
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
-    <PageWrapper>
-      <>
+  useEffect(() => {
+    setTimeout(() => setIsLoading(false), 2000);
+  }, []);
+
+  return isLoading ? (
+    <LoadingPage />
+  ) : (
+    <motion.div 
+      initial={{ opacity: 0, y: "100vh" }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <Navbar color={navColor} />
       <div className="home">
-        <div className="hero">
-          <div className="hero-name">
-          <h1>A Mern Stack</h1>
-          <h1>Developer</h1>
-          </div>
-          <div className="hero-des">
-            <h2>PortFolio:01</h2>
-            <div className="hero-data">
-              <div className="hero-data-t">
-                <p className='hero-data-td'>Availability</p>
-                <p>Full Time</p>
-              </div>
-              <div className="hero-data-t">
-                <p className='hero-data-td'>Contact</p>
-                <p>tjsaravind77@gmail.com</p>
-              </div>
-              <div className="hero-data-t">
-                <p className='hero-data-td'>Location</p>
-                <p>17.6800N, 83.2016E</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <motion.div className="hero" initial={{ opacity: 0, y: 80 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: "easeOut" }}>
+          <motion.div className="hero-name" variants={textContainer} initial="hidden" animate="visible">
+            {"A MERN Stack".split("").map((char, index) => (
+              <motion.span key={index} variants={letterAnimation} className="hero-letter">
+                {char}
+              </motion.span>
+            ))}
+          </motion.div>
+
+          <motion.div className="hero-name" variants={textContainer} initial="hidden" animate="visible">
+            {"Developer".split("").map((char, index) => (
+              <motion.span key={index} variants={letterAnimation} className="hero-letter">
+                {char}
+              </motion.span>
+            ))}
+          </motion.div>
+
+          <motion.div className="hero-des" initial={{ opacity: 0, y: 60 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}>
+            <motion.h2 variants={textContainer} initial="hidden" animate="visible">
+              {"PortFolio:01".split("").map((char, index) => (
+                <motion.span key={index} variants={letterAnimation} className="hero-letter">
+                  {char}
+                </motion.span>
+              ))}
+            </motion.h2>
+
+            <motion.div className="hero-data" initial={{ opacity: 0, y: 60 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}>
+              {[
+                { title: "Availability", value: "Full Time" },
+                { title: "Contact", value: "tjsaravind77@gmail.com" },
+                { title: "Location", value: "17.6800N, 83.2016E" },
+              ].map((item, index) => (
+                <motion.div key={index} className="hero-data-t" initial={{ opacity: 0, y: 60 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 + index * 0.1 }}>
+                  <motion.p className="hero-data-td" variants={textContainer} initial="hidden" animate="visible">
+                    {item.title.split("").map((char, i) => (
+                      <motion.span key={i} variants={letterAnimation} className="hero-letter">
+                        {char}
+                      </motion.span>
+                    ))}
+                  </motion.p>
+                  <motion.p variants={textContainer} initial="hidden" animate="visible">
+                    {item.value.split("").map((char, i) => (
+                      <motion.span key={i} variants={letterAnimation} className="hero-letter">
+                        {char}
+                      </motion.span>
+                    ))}
+                  </motion.p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
       <Projects />
-    </>
-    </PageWrapper>
+    </motion.div>
   );
 };
 

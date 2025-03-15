@@ -2,13 +2,9 @@ import { motion } from "framer-motion";
 import React from "react";
 
 const pageVariants = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.15 } }, // Stagger effect
-};
-
-const childVariants = {
   hidden: { opacity: 0, y: 50 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  exit: { opacity: 0, y: -50, transition: { duration: 0.4, ease: "easeInOut" } }, // Smooth exit
 };
 
 const PageWrapper = ({ children }) => {
@@ -17,13 +13,12 @@ const PageWrapper = ({ children }) => {
       variants={pageVariants}
       initial="hidden"
       animate="show"
-      exit="hidden"
+      exit="exit" // Now pages smoothly exit
+      style={{ position: "absolute", width: "100%" }} // Prevent flickering
     >
-      {React.Children.map(children, (child) => (
-        <motion.div variants={childVariants}>{child}</motion.div>
-      ))}
+      {children}
     </motion.div>
   );
 };
 
-export default PageWrapper; // ✅ Correct Export
+export default PageWrapper;
