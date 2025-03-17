@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "SHOW-TIME",
-        "description": "",
+        "description": "A modern movie ticket booking platform where users can browse movies, check showtimes, and book tickets seamlessly. Built with MERN stack for a smooth and responsive experience.",
         "technologies": ["React", "Node.js", "Express", "MongoDB"],
         "repository": "https://github.com/aravind-thamarapalli/movie-booking-site",
         "liveDemo": "https://show-time-tau.vercel.app/",
@@ -13,7 +13,7 @@
     {
         "id": 2,
         "name": "SAVE-CODE",
-        "description": "Paste bin",
+        "description": "A simple yet powerful Pastebin-like application where users can save, share, and retrieve code snippets using unique IDs. No authentication required—just store and access your code effortlessly.",
         "technologies": ["React", "Node.js", "Express", "MongoDB", "tailwindcss"],
         "repository": "https://github.com/aravind-thamarapalli/save-code",
         "liveDemo": "https://save-code-psi.vercel.app/",
@@ -24,7 +24,7 @@
     {
         "id": 3,
         "name": "Foodie-find",
-        "description": "A brief description of project six.",
+        "description": "A restaurant discovery platform that allows users to explore dining options based on location, cuisine, and other filters. Integrated with real Zomato data for accurate recommendations.",
         "technologies": ["React", "Node.js", "Express", "MongoDB"],
         "repository": "https://github.com/aravind-thamarapalli/zomato",
         "liveDemo": "https://zomato-murex-six.vercel.app/",
@@ -35,7 +35,7 @@
     {
         "id": 4,
         "name": "Youtube Clone",
-        "description": "",
+        "description": "A sleek YouTube replica featuring video browsing, search functionality, and a responsive UI. Built using React to mimic the core experience of the popular streaming platform.",
         "technologies": ["React", "CSS3"],
         "repository": "https://github.com/aravind-thamarapalli/youtube-clone",
         "liveDemo": "https://youtube-clone-umber-two.vercel.app/",
@@ -46,7 +46,7 @@
     {
         "id": 5,
         "name": "BUYZIT",
-        "description": "A brief description of project nine.",
+        "description": "An intuitive grocery shopping platform that enables users to browse products, add items to their cart, and complete purchases with ease. Designed for a seamless online shopping experience.",
         "technologies": ["React", "Node.js", "Express", "MongoDB"],
         "repository": "https://github.com/aravind-thamarapalli/mern-buyzit",
         "liveDemo": "https://mern-buyzit.vercel.app/",
