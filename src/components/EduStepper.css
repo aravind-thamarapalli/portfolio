@@ -52,6 +52,7 @@
     font-size: 28px;
     font-weight: bold;
     transition: color 0.3s;
+    color: #2E2E2E;
 }
   
   .step-title.selected {
@@ -76,8 +77,31 @@
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 10px;
-    text-align: left;
     color: #2E2E2E;
+  }
+
+  .card-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .count-up-text {
+    font-size: 64px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2E2E2E;
+    opacity: 1;text-align: center;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .card a:hover {
+    opacity: .8;
   }
 
   .card h3 {

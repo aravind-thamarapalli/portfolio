@@ -1,45 +1,93 @@
 import React, { useState } from "react";
+import { SiCodechef, SiLeetcode, SiGeeksforgeeks } from "react-icons/si";
+import { FaGithub } from "react-icons/fa";
+import CountUp from "./CountUp";
+import { GoArrowUpRight } from "react-icons/go";
 import "./EduStepper.css"; // Import CSS for styling
 
-const educationData = [
-  { title: "School", institution: "SHARON EM HIGH SCHOOL", stream: "SSC", timeline: "2020" },
-  { title: "Intermediate", institution: "SRI CHAITANYA JR COLLEGE", stream: "M.P.C", timeline: "2020-2022" },
-  { title: "UNDER GRADUATION", institution: "GVP College of Engineering (A)", stream: "B.TECH (CSE)", timeline: "2022-TILL" },
+const codingProfiles = [
+  {
+    title: "GitHub",
+    icon: <FaGithub />,
+    link: "https://github.com/aravind-thamarapalli",
+    counter_1: 131, // Contributions
+    counter_2: 16, // Repositories
+  },
+  {
+    title: "LeetCode",
+    icon: <SiLeetcode />,
+    link: "https://leetcode.com/aravind0725",
+    counter_1: 126, // Problems solved
+    counter_2: 1604, // Rating/Rank
+  },
+  {
+    title: "CodeChef",
+    icon: <SiCodechef />,
+    link: "https://www.codechef.com/users/aravind_tham",
+    counter_1: 24, // Problems solved
+    counter_2: 1487, // Rating
+  },
 ];
 
-const EducationStepper = () => {
+const EduStepper = () => {
   const [currentStep, setCurrentStep] = useState(0);
 
   return (
     <div className="stepper-container">
       {/* Stepper UI */}
       <div className="stepper">
-        {educationData.map((edu, index) => (
+        {codingProfiles.map((profile, index) => (
           <div key={index} className="step" onClick={() => setCurrentStep(index)}>
-            {/* Step Number */}
+            {/* Platform Icon */}
             <div className={`circle ${currentStep === index ? "active" : ""}`}>
-              {index + 1}
+              {profile.icon}
             </div>
             <p className={`step-title ${currentStep === index ? "selected" : ""}`}>
-              {edu.title}
+              {profile.title}
             </p>
           </div>
         ))}
-        {/* Stepper Line */}
         <div className="line"></div>
       </div>
 
-      {/* Only Display Selected Education Details */}
+      {/* Display Selected Coding Profile Details */}
       <div className="details">
         <div className="card">
-          <h3>{educationData[currentStep].title}</h3>
-          <p><strong>Institution:</strong> {educationData[currentStep].institution}</p>
-          <p><strong>Stream:</strong> {educationData[currentStep].stream}</p>
-          <p><strong>Timeline:</strong> {educationData[currentStep].timeline}</p>
+          {codingProfiles[currentStep].title !== "GitHub" ? (
+            <div className="card-details">
+              <div>
+              <p><strong>Problems Solved:</strong></p>
+              <CountUp from={0} to={codingProfiles[currentStep].counter_1} duration={1} className="count-up-text" />
+              </div>
+              <div>
+              <p><strong>Max Rating</strong></p>
+              <CountUp from={0} to={codingProfiles[currentStep].counter_2} duration={1} className="count-up-text" />
+              </div>
+            </div>
+          ) : (
+            <div className="card">
+              <div className="card-details">
+                <div>
+                <p><strong>Total Contributions</strong></p>
+                <CountUp from={0} to={codingProfiles[currentStep].counter_1} duration={1} className="count-up-text" />
+                </div>
+                <div>
+                <p><strong>Repositories</strong></p>
+                <CountUp from={0} to={codingProfiles[currentStep].counter_2} duration={1} className="count-up-text" />
+                </div>
+              </div>
+            </div>
+          )}
+          <p>
+
+            <a href={codingProfiles[currentStep].link} target="_blank" rel="noopener noreferrer">
+              Visit Profile <GoArrowUpRight />
+            </a>
+          </p>
         </div>
       </div>
     </div>
   );
 };
 
-export default EducationStepper;
+export default EduStepper;

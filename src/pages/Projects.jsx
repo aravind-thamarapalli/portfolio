@@ -11,7 +11,7 @@ const Projects = () => {
     <>
       <Crosses backgroundColor={"#2E2E2E"} color={"#F2DE9B"} />
       <div className="project-tab">
-        <h2>Projects</h2>
+        <h2 className="project-title">Projects</h2>
         <div className="projects">
           {projects.map((project, index) => (
             <div

@@ -4,7 +4,7 @@ import PageWrapper from "./PageWrapper";
 
 const LoadingPage = () => {
   return (
-    <PageWrapper>
+    <PageWrapper direction={-1}>
       <motion.div
         className="loading-container"
         initial={{ y: "-100vh", opacity: 0 }} // Start from top

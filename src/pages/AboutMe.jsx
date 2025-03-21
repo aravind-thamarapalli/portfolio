@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar';
 import { GoArrowUpRight } from "react-icons/go";
 import EduStepper from '../components/EduStepper';
 import Crosses from '../components/Crosses';
-import LoadingPage from '../components/LoadingPage';
 
 const pageVariants = {
   hidden: { opacity: 0, y: 100 },
@@ -18,11 +17,7 @@ const textVariants = {
 
 const AboutMe = () => {
   const [navColor, setNavColor] = useState("#FAF3E0");
-  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    setTimeout(() => setIsLoading(false), 2000);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +39,7 @@ const AboutMe = () => {
     { name: "GitHub", description: "A version control system for tracking changes in source code during software development." },
   ];
 
-  return isLoading ? <LoadingPage /> : (
+  return (
     <motion.div initial="hidden" animate="visible" variants={pageVariants}>
       <Navbar color={navColor} />
 
@@ -62,7 +57,7 @@ const AboutMe = () => {
 
       <motion.div className="about-me-des" variants={textVariants}>
         <motion.div className="about-me-des-main">
-          <motion.h1 className='a-m-des1'>MY EDUCATION</motion.h1>
+          <motion.h1 className='a-m-des1'>MY PROFILES</motion.h1>
           <motion.div className="a-m-edu">
             <EduStepper />
           </motion.div>
@@ -103,9 +98,10 @@ const AboutMe = () => {
           <motion.a href="https://github.com/aravind-thamarapalli" className='get-conn-link'>
             <p>GitHub</p> <GoArrowUpRight className='get-conn-i' />
           </motion.a>
-          <motion.a href="https://www.instagram.com/aravind_thamarapalli/" className='get-conn-link'>
-            <p>Instagram</p> <GoArrowUpRight className='get-conn-i' />
+          <motion.a href="/resume.pdf" download="resume.pdf" className='get-conn-link'>
+            <p>Resume</p> <GoArrowUpRight className='get-conn-i' />
           </motion.a>
+          
         </motion.div>
       </motion.div>
     </motion.div>

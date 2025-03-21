@@ -17,7 +17,7 @@ const Navbar = ({ color }) => {
       <Link to="/" style={getLinkStyle('/')}><h1 className="logo">Aravind Thamarapalli</h1></Link>
       <ul className="nav-links">
         <li><Link to="/" style={getLinkStyle('/')}>Home</Link></li>
-        <li><Link to="/about" style={getLinkStyle('/about')}>About</Link></li>
+        <li><Link to="/about" style={getLinkStyle('/about')}>Profile</Link></li>
       </ul>
     </nav>
   );
