@@ -42,7 +42,8 @@ body {
   align-items: center;
   width: 100%;
   padding: 1rem 2rem;
-  background-color: transparent;
+  background-color: #ffffff00;
+  backdrop-filter: blur(25px);
   position: fixed;
   top: 0;
   left: 0;
@@ -542,6 +543,8 @@ ul {
 .p-nav {
   position: sticky;
   top: 0;
+  background: transparent;
+  backdrop-filter: blur(25px);
   display: flex;
   justify-content: space-between;
   padding: 1rem 2rem;

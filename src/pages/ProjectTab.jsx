@@ -132,9 +132,6 @@ const ProjectTab = () => {
           </motion.div>
         </motion.div>
       </motion.div>
-      <motion.div>
-        <Crosses backgroundColor={item.bgColor} color={item.color} />
-      </motion.div>
     </AnimatePresence>
   );
 };
