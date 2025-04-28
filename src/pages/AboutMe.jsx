@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import { GoArrowUpRight } from "react-icons/go";
 import EduStepper from '../components/EduStepper';
 import Crosses from '../components/Crosses';
+import AnimatedList from '../components/AnimatedList'  
 
 const pageVariants = {
   hidden: { opacity: 0, y: 100 },
@@ -38,6 +39,7 @@ const AboutMe = () => {
     { name: "PostMan", description: "A collaboration platform for API development to design, test, and document APIs." },
     { name: "GitHub", description: "A version control system for tracking changes in source code during software development." },
   ];
+  const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6', 'Item 7', 'Item 8', 'Item 9', 'Item 10']; 
 
   return (
     <motion.div initial="hidden" animate="visible" variants={pageVariants}>
@@ -69,12 +71,13 @@ const AboutMe = () => {
       <motion.div className="tech-stack" variants={textVariants}>
         <motion.h2 className='tech-stack-h2'>What I Know</motion.h2>
         <motion.div className="tech-details">
-          {techStack.map((tech, index) => (
-            <motion.div key={index} className='tech-tile' variants={textVariants}>
-              <motion.p className='tech-h'>{tech.name}</motion.p>
-              <motion.p className='tech-d'>{tech.description}</motion.p>
-            </motion.div>
-          ))}
+<AnimatedList
+  items={items}
+  onItemSelect={(item, index) => console.log(item, index)}
+  showGradients={true}
+  enableArrowNavigation={true}
+  displayScrollbar={true}
+/>
         </motion.div>
       </motion.div>
 

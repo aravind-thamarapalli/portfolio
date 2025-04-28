@@ -7,6 +7,8 @@ import Projects from "./pages/Projects";
 import ProjectTab from "./pages/ProjectTab";
 import PageWrapper from "./components/PageWrapper";
 import LoadingPage from "./components/LoadingPage";
+import Blog from "./pages/Blog";
+import BlogPage from "./pages/BlogPage";
 import "./App.css";
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
           <Route path="/about" element={<PageWrapper direction={1}><AboutMe /></PageWrapper>} />
           <Route path="/projects" element={<PageWrapper direction={1}><Projects /></PageWrapper>} />
           <Route path="/project" element={<PageWrapper direction={1}><ProjectTab /></PageWrapper>} />
+          <Route path="/blog" element={<PageWrapper direction={1}><Blog/></PageWrapper>} />
+          <Route path="/blogpage1" element={<PageWrapper direction={1}><BlogPage /></PageWrapper>} />
         </Routes>
       )}
     </AnimatePresence>

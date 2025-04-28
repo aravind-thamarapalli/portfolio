@@ -24,8 +24,8 @@ const codingProfiles = [
     title: "CodeChef",
     icon: <SiCodechef />,
     link: "https://www.codechef.com/users/aravind_tham",
-    counter_1: 24, // Problems solved
-    counter_2: 1487, // Rating
+    counter_1: 28, // Problems solved
+    counter_2: 1540, // Rating
   },
 ];
 
