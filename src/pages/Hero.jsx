@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Projects from "./Projects";
 import Crosses from "../components/Crosses";
 import { motion } from "framer-motion";
+import "./Hero.css"; // Assuming you have a CSS file for styles
 
 const letterAnimation = {
   hidden: { opacity: 0, y: 50 },

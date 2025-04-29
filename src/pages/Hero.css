@@ -1,0 +1,157 @@
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: first baseline;
+    background-color: var(--primary-color);
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .hero-name {
+    color: var(--accent-color);
+    font-size: 10rem;
+    font-weight: bold;
+    padding: 0 50px;
+    overflow: hidden;
+  }
+  
+  .hero-img {
+    display: none;
+  }
+  
+  .hero-des {
+    padding-top: 20px;
+    display: flex;
+    color: var(--accent-color);
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .hero-des h2 {
+    font-size: 5rem;
+    font-weight: bold;
+    overflow: hidden;
+  }
+  
+  .hero-data {
+    display: flex;
+    gap: 10rem;
+    overflow: hidden;
+  }
+  
+  .hero-data-t {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .hero-data-td {
+    font-size: 1.2rem;
+    text-decoration: underline;
+    font-weight: bold;
+    overflow: hidden;
+  }
+  .resume-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease-in-out;
+  }
+  
+  .resume-link:hover {
+    border-bottom: 2px solid var(--accent-color);
+  }
+  /* Little about me */
+  .little-abt-me {
+    display: flex;
+    align-items: right;
+    padding: 80px 50px 0;
+    height: 92vh;
+    width: 100%;
+  }
+  
+  .abt-container {
+    text-align: right;
+    padding: 30px;
+    border-radius: 10px;
+  }
+  
+  .lit-abt-title {
+    font-size: 8rem;
+    font-weight: bold;
+    color: #F2DE9B; /* Soft gold color for elegance */
+    margin-bottom: 15px;
+  }
+  
+  .lit-abt-text {
+    text-align: left;
+    font-size: 24px;
+    line-height: 1.2;
+    width: 70%;
+    font-family: 'DM Sans', sans-serif;
+    color:var(--primary-color);
+    margin-bottom: 10px;
+  }
+  
+  .lit-abt-tabs {
+    margin:  0 auto;
+    margin-top: 50px;
+    color: var(--primary-color);
+    text-align: center;
+    width: max-content;
+    padding: 16px;
+    border: 2px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .lit-abt-tab {
+    font-size: 42px;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+  }
+  
+  .lit-abt-tab img {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    transition: filter 0.3s ease-in-out;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .abt-container {
+      padding: 20px;
+    }
+  
+    .lit-abt-title {
+      font-size: 2rem;
+    }
+  
+    .lit-abt-text {
+      font-size: 1rem;
+      text-align: left;
+      width: 100%;
+    }
+  
+    .lit-abt-tabs {
+      width: 100%;
+      padding: 10px;
+      border: none;
+    }
+  
+    .lit-abt-tab {
+      font-size: 1.5rem;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  

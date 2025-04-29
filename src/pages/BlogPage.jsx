@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // Navigation hook
 import { IoIosArrowUp } from "react-icons/io"; // Icon for the button
+import "./BlogPage.css"; // Assuming you have a CSS file for styles
 
 const BlogPage = () => {
   const navigate = useNavigate();

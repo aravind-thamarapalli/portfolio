@@ -1,45 +1,49 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
-import { GoArrowUpRight } from "react-icons/go";
 import EduStepper from '../components/EduStepper';
 import Crosses from '../components/Crosses';
-import AnimatedList from '../components/AnimatedList'  
+import { GoArrowUpRight } from 'react-icons/go';
+import './AboutMe.css'; // Assuming you have a CSS file for styles
+import {
+  SiReact, SiTailwindcss, SiMongodb,
+  SiExpress, SiTypescript, SiFigma,
+  SiPostman, SiGithub
+} from 'react-icons/si';
+import { MdPhoneIphone } from 'react-icons/md'; // For React Native icon
 
 const pageVariants = {
   hidden: { opacity: 0, y: 100 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
 };
 
 const textVariants = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut", staggerChildren: 0.1 } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut', staggerChildren: 0.1 } },
 };
 
-const AboutMe = () => {
-  const [navColor, setNavColor] = useState("#FAF3E0");
+const techStack = [
+  { name: 'React.js', icon: <SiReact />, description: 'A JavaScript library for building dynamic and reusable UI components.' },
+  { name: 'Tailwind CSS', icon: <SiTailwindcss />, description: 'A utility-first CSS framework for rapidly styling modern web applications.' },
+  { name: 'React Native', icon: <MdPhoneIphone />, description: 'Cross-platform mobile apps using React and JavaScript.' },
+  { name: 'MongoDB', icon: <SiMongodb />, description: 'A NoSQL database designed for scalability and flexibility.' },
+  { name: 'Express.js', icon: <SiExpress />, description: 'A lightweight web framework for Node.js to build REST APIs.' },
+  { name: 'TypeScript', icon: <SiTypescript />, description: 'A statically typed superset of JavaScript for building scalable apps.' },
+  { name: 'Figma', icon: <SiFigma />, description: 'A collaborative design tool for UI/UX and prototyping.' },
+  { name: 'Postman', icon: <SiPostman />, description: 'A platform for building, testing, and documenting APIs.' },
+  { name: 'GitHub', icon: <SiGithub />, description: 'Version control system for code collaboration and hosting.' },
+];
 
+const AboutMe = () => {
+  const [navColor, setNavColor] = useState('#FAF3E0');
 
   useEffect(() => {
     const handleScroll = () => {
-      setNavColor(window.scrollY < window.innerHeight / 1.1 ? "#D6CFE1" : "#2e2e2e");
+      setNavColor(window.scrollY < window.innerHeight / 1.1 ? '#D6CFE1' : '#2e2e2e');
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const techStack = [
-    { name: "React.js", description: "A JavaScript library for building dynamic and reusable UI components." },
-    { name: "Tailwind CSS", description: "A utility-first CSS framework for rapidly styling modern web applications." },
-    { name: "React Native", description: "A framework for building cross-platform mobile apps using React and JavaScript." },
-    { name: "MongoDB", description: "A NoSQL database designed for scalability and flexibility." },
-    { name: "Express.js", description: "A lightweight web framework for Node.js to build REST APIs." },
-    { name: "TypeScript", description: "A statically typed superset of JavaScript for building scalable applications." },
-    { name: "Figma", description: "A web-based design tool for creating user interfaces, prototypes, and collaborative design workflows." },
-    { name: "PostMan", description: "A collaboration platform for API development to design, test, and document APIs." },
-    { name: "GitHub", description: "A version control system for tracking changes in source code during software development." },
-  ];
-  const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6', 'Item 7', 'Item 8', 'Item 9', 'Item 10']; 
 
   return (
     <motion.div initial="hidden" animate="visible" variants={pageVariants}>
@@ -55,7 +59,7 @@ const AboutMe = () => {
         </motion.div>
       </motion.div>
 
-      <Crosses backgroundColor={"#D6CFE1"} color={"2E2E2E"} />
+      <Crosses backgroundColor="#D6CFE1" color="#2E2E2E" />
 
       <motion.div className="about-me-des" variants={textVariants}>
         <motion.div className="about-me-des-main">
@@ -66,22 +70,24 @@ const AboutMe = () => {
         </motion.div>
       </motion.div>
 
-      <Crosses backgroundColor={"#2E2E2E"} color={"#D6CFE1"} />
+      <Crosses backgroundColor="#2E2E2E" color="#D6CFE1" />
 
       <motion.div className="tech-stack" variants={textVariants}>
         <motion.h2 className='tech-stack-h2'>What I Know</motion.h2>
         <motion.div className="tech-details">
-<AnimatedList
-  items={items}
-  onItemSelect={(item, index) => console.log(item, index)}
-  showGradients={true}
-  enableArrowNavigation={true}
-  displayScrollbar={true}
-/>
+          {techStack.map((tech, index) => (
+            <motion.div className="tech-card" key={index}>
+              <div className="tech-icon">{tech.icon}</div>
+              <div className="tech-info">
+                <h3>{tech.name}</h3>
+                {/* <p>{tech.description}</p> */}
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </motion.div>
 
-      <Crosses backgroundColor={"#D6CFE1"} color={"2E2E2E"} />
+      <Crosses backgroundColor="#D6CFE1" color="#2E2E2E" />
 
       <motion.div className="get-conn" variants={textVariants}>
         <motion.div className="get-conn-1">
@@ -104,11 +110,10 @@ const AboutMe = () => {
           <motion.a href="/resume.pdf" download="resume.pdf" className='get-conn-link'>
             <p>Resume</p> <GoArrowUpRight className='get-conn-i' />
           </motion.a>
-          
         </motion.div>
       </motion.div>
     </motion.div>
   );
-}
+};
 
 export default AboutMe;

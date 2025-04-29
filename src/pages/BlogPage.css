@@ -1,0 +1,334 @@
+
+/* INDIVIDUAL BLOG */
+
+
+.blog-page-container {
+    margin: 0 50px; 
+    padding: 2rem;
+    color: var(--secondary-color);
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .blog-page-back-button {
+    font-size: 1.1rem;
+    color: #00d9d9;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    display: inline-block;
+    transition: color 0.3s ease;
+  }
+  
+  .blog-page-back-button:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  
+  .blog-page-title-div {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .blog-page-title {
+    font-size: 2.8rem;
+    color: #00d9d9;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .blog-page-meta {
+    font-size: 1rem;
+    color: #bbb;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  
+  .blog-page-content {
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .blog-page-intro {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #00d9d9;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .blog-page-banner {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    object-fit: cover;
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .blog-page-banner img {
+    width: 60%;
+    height: auto;
+    border-radius: 12px;
+  }
+  
+  .blog-page-tldr p {
+    background-color: #008080;
+    padding: 1rem;
+    color: #111;
+    margin-bottom: 2rem;
+    border-left: 5px solid #00ffd0;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .blog-page-story-box {
+    background: rgba(0, 128, 128, 0.2);
+    border-left: 5px solid #00d9d9;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .blog-page-story-box h3 {
+    color: #00d9d9;
+    margin-bottom: 1rem;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .blog-page-story-box ul {
+    display: flex;
+    flex-direction: column;
+    font-family: 'DM Sans', sans-serif;
+    margin-left: 1rem;
+    list-style: disc;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .blog-page-story-box ul li {
+    margin-bottom: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .blog-page-moral {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #00d9d9;
+    font-family: 'DM Sans', sans-serif;
+  }
+  /* Back Button */
+  .blog-page-back-button {
+    cursor: pointer;
+    color: #00d9d9;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  
+  /* Go to Top Button */
+  .go-to-top-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #00d9d9;
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 36px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    opacity: 0; /* Start hidden */
+    visibility: hidden; /* Ensure it’s not clickable initially */
+  }
+  
+  /* Fade In & Out Transitions */
+  .go-to-top-button.show {
+    opacity: 1; /* Make the button visible */
+    visibility: visible; /* Enable interaction */
+  }
+  
+  /* Hover effect */
+  .go-to-top-button:hover {
+    background-color: #00a3a3;
+    transform: scale(1.1); /* Make it pop slightly */
+  }
+  
+  /* Smooth transition on hover */
+  .go-to-top-button:active {
+    transform: scale(1); /* Reset size on click */
+  }
+  
+  
+  .blog-page-featured-quote {
+    background: #008080;
+    color: #111;
+    padding: 1rem 2rem;
+    border-left: 5px solid #00ffd0;
+    margin: 3rem 0;
+    font-style: italic;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .blog-page-key-metrics ul {
+    margin-left: 1rem;
+  }
+  
+  .blog-page-key-metrics li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .blog-page-tags {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .blog-page-metrics-title, .blog-page-tools-title, .blog-page-career-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #00d9d9;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .blog-page-key-metrics, .blog-page-tools-list ul{
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    color: #aaa;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .blog-page-paragraph {
+    margin: 1rem 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #aaa;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .blog-page-tags span, .blog-page-key-metrics li, .blog-page-tools-list li {
+    background-color: rgba(0, 255, 208, 0.1);
+    color: #00d9d9;
+    margin-right: 8px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .blog-page-footer {
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 1rem;
+    color: #aaa;
+  }
+  
+  /* ========== RESPONSIVE STYLES ========== */
+  
+  /* Tablets: 768px and down */
+  @media (max-width: 768px) {
+    .blog-page-container {
+      margin: 0 20px;
+      padding: 1.5rem;
+    }
+  
+    .blog-page-title {
+      font-size: 2.2rem;
+    }
+  
+    .blog-page-intro {
+      font-size: 1.2rem;
+    }
+  
+    .blog-page-banner img {
+      width: 80%;
+    }
+  
+    .blog-page-tldr p,
+    .blog-page-featured-quote,
+    .blog-page-story-box {
+      font-size: 0.95rem;
+      padding: 1rem;
+    }
+  
+    .blog-page-key-metrics, 
+    .blog-page-tools-list ul {
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+  
+    .blog-page-tags {
+      justify-content: flex-start;
+    }
+  
+    .go-to-top-button {
+      bottom: 20px;
+      right: 20px;
+      width: 45px;
+      height: 45px;
+      font-size: 28px;
+    }
+  }
+  
+  /* Phones: 480px and down */
+  @media (max-width: 480px) {
+    .blog-page-container {
+      margin: 0 10px;
+      padding: 1rem;
+    }
+  
+    .blog-page-title {
+      font-size: 1.8rem;
+    }
+  
+    .blog-page-intro {
+      font-size: 1rem;
+    }
+  
+    .blog-page-meta {
+      font-size: 0.85rem;
+    }
+  
+    .blog-page-banner img {
+      width: 100%;
+    }
+  
+    .blog-page-tldr p,
+    .blog-page-featured-quote,
+    .blog-page-story-box {
+      font-size: 0.9rem;
+      padding: 0.8rem;
+    }
+  
+    .blog-page-key-metrics li,
+    .blog-page-tools-list li,
+    .blog-page-tags span {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.6rem;
+    }
+  
+    .blog-page-paragraph {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  
+    .blog-page-back-button {
+      font-size: 1rem;
+    }
+  
+    .go-to-top-button {
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+    }
+  }
+  

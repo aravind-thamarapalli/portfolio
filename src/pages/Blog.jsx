@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { nav } from "framer-motion/client";
+import "./Blog.css"; // Assuming you have a CSS file for styles
 
 // JSON Data (can also be imported from a separate file if needed)
 const blogData = [
@@ -10,18 +12,21 @@ const blogData = [
     description:
       "Building apps is just half the game. Keeping them alive, fast, and delightful? That’s the real championship.",
     link: "/blogpage1",
+    date: "28-04-2025",
   },
   // {
   //   title: "The Evolution of Front-End Development: A Journey Through Time",
   //   description:
   //     "From static pages to dynamic user experiences, learn how front-end development has evolved over the years.",
   //   link: "/blogpage",
+  //   date: "15-05-2025",
   // },
   // {
   //   title: "Understanding Microservices Architecture",
   //   description:
   //     "Discover the power of microservices and how they can enhance scalability and flexibility in software development.",
   //   link: "/blogpage",
+  //   date: "10-06-2025",
   // },
 ];
 
@@ -104,10 +109,18 @@ const Blog = () => {
                   variants={letterAnimation}
                   initial="hidden"
                   animate="visible"
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
                 >
                   <Link to={blog.link} className="blog-card-link">
                     Read more
                   </Link>
+                  <p>
+                    <span className="blog-card-date">{blog.date}</span>
+                  </p>
                 </motion.div>
               </motion.div>
             ))}
