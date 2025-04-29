@@ -83,7 +83,6 @@
     .blogs-page {
       flex-direction: column;
       align-items: flex-start;
-      height: auto;
       padding: 50px 20px 20px;
     }
   
