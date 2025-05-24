@@ -9,6 +9,7 @@ import PageWrapper from "./components/PageWrapper";
 import LoadingPage from "./components/LoadingPage";
 import Blog from "./pages/Blog";
 import BlogPage from "./pages/BlogPage";
+import BlogPage2 from "./pages/BlogPage2";
 import "./App.css";
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route path="/project" element={<PageWrapper direction={1}><ProjectTab /></PageWrapper>} />
           <Route path="/blog" element={<PageWrapper direction={1}><Blog/></PageWrapper>} />
           <Route path="/blogpage1" element={<PageWrapper direction={1}><BlogPage /></PageWrapper>} />
+          <Route path="/blogpage2" element={<PageWrapper direction={1}><BlogPage2 /></PageWrapper>} />
         </Routes>
       )}
     </AnimatePresence>

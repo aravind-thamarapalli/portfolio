@@ -14,13 +14,13 @@ const blogData = [
     link: "/blogpage1",
     date: "28-04-2025",
   },
-  // {
-  //   title: "The Evolution of Front-End Development: A Journey Through Time",
-  //   description:
-  //     "From static pages to dynamic user experiences, learn how front-end development has evolved over the years.",
-  //   link: "/blogpage",
-  //   date: "15-05-2025",
-  // },
+  {
+  title: "Why AI Agents Are the Future of Smart Software",
+  description:
+    "Dive into the world of intelligent agents — from reactive responders to learning machines — and discover how they’re reshaping software as we know it.",
+  link: "/blogpage2",
+  date: "24-05-2025"
+},
   // {
   //   title: "Understanding Microservices Architecture",
   //   description:

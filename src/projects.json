@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "SHOW-TIME",
+        "name": "SILVER-SEAT",
         "description": "A modern movie ticket booking platform where users can browse movies, check showtimes, and book tickets seamlessly. Built with MERN stack for a smooth and responsive experience.",
         "technologies": ["React", "Node.js", "Express", "MongoDB"],
         "repository": "https://github.com/aravind-thamarapalli/movie-booking-site",
@@ -10,8 +10,19 @@
         "bgColor": "#F5F5F5",
         "color": "#424242"
     },
-    {
+        {
         "id": 2,
+        "name": "BUYZIT",
+        "description": "An intuitive grocery shopping platform that enables users to browse products, add items to their cart, and complete purchases with ease. Designed for a seamless online shopping experience.",
+        "technologies": ["React", "Node.js", "Express", "MongoDB"],
+        "repository": "https://github.com/aravind-thamarapalli/mern-buyzit",
+        "liveDemo": "https://mern-buyzit.vercel.app/",
+        "image": "assets/5.svg",
+        "bgColor": "#D9A679",
+        "color": "#2E4A3D"
+    },
+    {
+        "id": 3,
         "name": "SAVE-CODE",
         "description": "A simple yet powerful Pastebin-like application where users can save, share, and retrieve code snippets using unique IDs. No authentication required—just store and access your code effortlessly.",
         "technologies": ["React", "Node.js", "Express", "MongoDB", "tailwindcss"],
@@ -22,7 +33,7 @@
         "color": "#0D47A1"
     },
     {
-        "id": 3,
+        "id": 4,
         "name": "Foodie-find",
         "description": "A restaurant discovery platform that allows users to explore dining options based on location, cuisine, and other filters. Integrated with real Zomato data for accurate recommendations.",
         "technologies": ["React", "Node.js", "Express", "MongoDB"],
@@ -33,7 +44,7 @@
         "color": "#3B3B3B"
     },
     {
-        "id": 4,
+        "id": 5,
         "name": "Youtube Clone",
         "description": "A sleek YouTube replica featuring video browsing, search functionality, and a responsive UI. Built using React to mimic the core experience of the popular streaming platform.",
         "technologies": ["React", "CSS3"],
@@ -42,16 +53,5 @@
         "image": "assets/4.svg",
         "bgColor": "#FFF9C4",
         "color": "#E65100"
-    },
-    {
-        "id": 5,
-        "name": "BUYZIT",
-        "description": "An intuitive grocery shopping platform that enables users to browse products, add items to their cart, and complete purchases with ease. Designed for a seamless online shopping experience.",
-        "technologies": ["React", "Node.js", "Express", "MongoDB"],
-        "repository": "https://github.com/aravind-thamarapalli/mern-buyzit",
-        "liveDemo": "https://mern-buyzit.vercel.app/",
-        "image": "assets/5.svg",
-        "bgColor": "#D9A679",
-        "color": "#2E4A3D"
     }
 ]

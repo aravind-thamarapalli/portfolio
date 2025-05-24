@@ -55,7 +55,7 @@ const AboutMe = () => {
           <motion.h1 className='about-me-h2'>At Me</motion.h1>
         </motion.div>
         <motion.div className="about-me-img">
-          <img src="assets/main.png" alt="img" />
+          <img src="assets/photo2.png" alt="img" />
         </motion.div>
       </motion.div>
 

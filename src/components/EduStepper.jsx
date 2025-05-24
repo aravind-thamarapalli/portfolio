@@ -10,22 +10,22 @@ const codingProfiles = [
     title: "GitHub",
     icon: <FaGithub />,
     link: "https://github.com/aravind-thamarapalli",
-    counter_1: 131, // Contributions
+    counter_1: 146, // Contributions
     counter_2: 16, // Repositories
   },
   {
     title: "LeetCode",
     icon: <SiLeetcode />,
     link: "https://leetcode.com/aravind0725",
-    counter_1: 126, // Problems solved
+    counter_1: 949952, // Problems solved
     counter_2: 1604, // Rating/Rank
   },
   {
     title: "CodeChef",
     icon: <SiCodechef />,
     link: "https://www.codechef.com/users/aravind_tham",
-    counter_1: 28, // Problems solved
-    counter_2: 1540, // Rating
+    counter_1: 19843, // Problems solved
+    counter_2: 1603, // Rating
   },
 ];
 
@@ -56,7 +56,7 @@ const EduStepper = () => {
           {codingProfiles[currentStep].title !== "GitHub" ? (
             <div className="card-details">
               <div>
-              <p><strong>Problems Solved:</strong></p>
+              <p><strong>Global Rank:</strong></p>
               <CountUp from={0} to={codingProfiles[currentStep].counter_1} duration={1} className="count-up-text" />
               </div>
               <div>
