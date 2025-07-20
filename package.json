@@ -10,14 +10,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "framer-motion": "^12.4.11",
+    "@tailwindcss/postcss": "^4.1.11",
+    "aos": "^2.3.4",
+    "autoprefixer": "^10.4.21",
+    "framer-motion": "^12.23.0",
     "gsap": "^3.12.7",
     "lucide-react": "^0.476.0",
+    "postcss": "^8.5.6",
     "react": "^19.0.0",
     "react-awesome-shapes": "^0.1.6",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.2.0"
+    "react-intersection-observer": "^9.16.0",
+    "react-router-dom": "^7.2.0",
+    "tailwindcss": "^4.1.11",
+    "typewriter-effect": "^2.22.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

@@ -21,13 +21,13 @@ const blogData = [
   link: "/blogpage2",
   date: "24-05-2025"
 },
-  // {
-  //   title: "Understanding Microservices Architecture",
-  //   description:
-  //     "Discover the power of microservices and how they can enhance scalability and flexibility in software development.",
-  //   link: "/blogpage",
-  //   date: "10-06-2025",
-  // },
+{
+  title: "Agentic Backends: No-Code? More Like No-Human!",
+  description:
+    "Say goodbye to REST APIs you manually stitch together. Say hello to backend agents that build routes, connect databases, and deploy your app—just by understanding your intent.",
+  link: "/blogpage3",
+  date: "20-07-2025",
+},
 ];
 
 const letterAnimation = {

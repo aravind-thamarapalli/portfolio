@@ -10,6 +10,7 @@ import LoadingPage from "./components/LoadingPage";
 import Blog from "./pages/Blog";
 import BlogPage from "./pages/BlogPage";
 import BlogPage2 from "./pages/BlogPage2";
+import BlogPage3 from "./pages/BlogPage3";
 import "./App.css";
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route path="/blog" element={<PageWrapper direction={1}><Blog/></PageWrapper>} />
           <Route path="/blogpage1" element={<PageWrapper direction={1}><BlogPage /></PageWrapper>} />
           <Route path="/blogpage2" element={<PageWrapper direction={1}><BlogPage2 /></PageWrapper>} />
+          <Route path="/blogpage3" element={<PageWrapper direction={1}><BlogPage3 /></PageWrapper>} />
         </Routes>
       )}
     </AnimatePresence>
