@@ -5,7 +5,6 @@ import { IoIosArrowForward } from "react-icons/io";
 import { GoArrowUpRight } from "react-icons/go";
 import { motion, AnimatePresence } from "framer-motion";
 import projectData from "../projects.json";
-import "./ProjectTab.css"; // Assuming you have a CSS file for styles
 import Crosses from "../components/Crosses";
 
 const fadeVariants = {
