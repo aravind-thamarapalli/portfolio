@@ -4,6 +4,9 @@ import Navbar from '../components/Navbar';
 import EduStepper from '../components/EduStepper';
 import Crosses from '../components/Crosses';
 import { GoArrowUpRight } from 'react-icons/go';
+import { SiGooglegemini } from 'react-icons/si';
+import { RiTeamFill } from 'react-icons/ri';
+import { GrWorkshop } from 'react-icons/gr';
 import './AboutMe.css'; // Assuming you have a CSS file for styles
 import {
   SiReact, SiTailwindcss, SiMongodb,
@@ -32,6 +35,9 @@ const techStack = [
   { name: 'Figma', icon: <SiFigma />, description: 'A collaborative design tool for UI/UX and prototyping.' },
   { name: 'Postman', icon: <SiPostman />, description: 'A platform for building, testing, and documenting APIs.' },
   { name: 'GitHub', icon: <SiGithub />, description: 'Version control system for code collaboration and hosting.' },
+  { name: 'ServiceNow', icon: <RiTeamFill />, description: 'A cloud computing platform to help companies manage digital workflows.' },
+  { name: 'ITSM', icon: <GrWorkshop />, description: 'Information Technology Service Management.' },
+  { name: 'Generative AI', icon: <SiGooglegemini />, description: 'AI systems that can generate text, images, or other media.' }
 ];
 
 const AboutMe = () => {
@@ -72,20 +78,22 @@ const AboutMe = () => {
 
       <Crosses backgroundColor="#2E2E2E" color="#D6CFE1" />
 
-      <motion.div className="tech-stack" variants={textVariants}>
-        <motion.h2 className='tech-stack-h2'>What I Know</motion.h2>
-        <motion.div className="tech-details">
-          {techStack.map((tech, index) => (
-            <motion.div className="tech-card" key={index}>
-              <div className="tech-icon">{tech.icon}</div>
-              <div className="tech-info">
-                <h3>{tech.name}</h3>
-                {/* <p>{tech.description}</p> */}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+      <motion.div className="tech-stack" variants={textVariants} initial="hidden" animate="visible">
+      <motion.h2 className='tech-stack-h2'>What I Know</motion.h2>
+      <motion.div className="tech-details">
+        {techStack.map((tech, index) => (
+          <motion.div
+            className="tech-card"
+            key={index}
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 200 }}
+          >
+            <div className="tech-name">{tech.name}</div>
+            <div className="tech-icon">{tech.icon}</div>
+          </motion.div>
+        ))}
       </motion.div>
+    </motion.div>
 
       <Crosses backgroundColor="#D6CFE1" color="#2E2E2E" />
 

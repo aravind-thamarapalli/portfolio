@@ -6,6 +6,7 @@ import { GoArrowUpRight } from "react-icons/go";
 import { motion, AnimatePresence } from "framer-motion";
 import projectData from "../projects.json";
 import Crosses from "../components/Crosses";
+import "./ProjectTab.css";
 
 const fadeVariants = {
   hidden: { opacity: 0, y: 28 },

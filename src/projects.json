@@ -1,6 +1,18 @@
 [
     {
         "id": 1,
+        "name": "CodeSensei",
+        "description": "An AI-powered coding mentor built with Next.js that explains code, suggests improvements, and provides tailored learning resources. Perfect for helping students and developers grasp complex logic effortlessly.",
+        "technologies": ["Next.js", "Node.js", "Tailwind CSS", "Gemini AI"],
+        "repository": "https://github.com/aravind-thamarapalli/codesensei",
+        "liveDemo": "https://code-sensei-psi.vercel.app/",
+        "image": "assets/folioimage.svg",
+        "bgColor": "#262626",
+        "color": "#ADD8E6",
+        "accentColor": "#e2bf33"
+    },
+    {
+        "id": 2,
         "name": "SILVER-SEAT",
         "description": "A modern movie ticket booking platform where users can browse movies, check showtimes, and book tickets seamlessly. Built with MERN stack for a smooth and responsive experience.",
         "technologies": ["React", "Node.js", "Express", "MongoDB"],
@@ -11,7 +23,7 @@
         "color": "#424242"
     },
         {
-        "id": 2,
+        "id": 3,
         "name": "BUYZIT",
         "description": "An intuitive grocery shopping platform that enables users to browse products, add items to their cart, and complete purchases with ease. Designed for a seamless online shopping experience.",
         "technologies": ["React", "Node.js", "Express", "MongoDB"],
@@ -22,7 +34,7 @@
         "color": "#2E4A3D"
     },
     {
-        "id": 3,
+        "id": 4,
         "name": "SAVE-CODE",
         "description": "A simple yet powerful Pastebin-like application where users can save, share, and retrieve code snippets using unique IDs. No authentication required—just store and access your code effortlessly.",
         "technologies": ["React", "Node.js", "Express", "MongoDB", "tailwindcss"],
@@ -33,7 +45,7 @@
         "color": "#0D47A1"
     },
     {
-        "id": 4,
+        "id": 5,
         "name": "Foodie-find",
         "description": "A restaurant discovery platform that allows users to explore dining options based on location, cuisine, and other filters. Integrated with real Zomato data for accurate recommendations.",
         "technologies": ["React", "Node.js", "Express", "MongoDB"],
@@ -42,16 +54,5 @@
         "image": "assets/3.svg",
         "bgColor": "#C2A48A",
         "color": "#3B3B3B"
-    },
-    {
-        "id": 5,
-        "name": "Youtube Clone",
-        "description": "A sleek YouTube replica featuring video browsing, search functionality, and a responsive UI. Built using React to mimic the core experience of the popular streaming platform.",
-        "technologies": ["React", "CSS3"],
-        "repository": "https://github.com/aravind-thamarapalli/youtube-clone",
-        "liveDemo": "https://youtube-clone-umber-two.vercel.app/",
-        "image": "assets/4.svg",
-        "bgColor": "#FFF9C4",
-        "color": "#E65100"
     }
 ]

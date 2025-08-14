@@ -2,6 +2,7 @@ import React from "react";
 import projectData from "../projects.json";
 import { useNavigate } from "react-router-dom";
 import Crosses from "../components/Crosses";
+import "./Projects.css"; // Assuming you have a CSS file for styling
 
 const Projects = () => {
   const projects = projectData;

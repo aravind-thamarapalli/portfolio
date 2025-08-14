@@ -94,7 +94,7 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
             >
-              {"Folio:01".split("").map((char, index) => (
+              {"nice to meet u".split("").map((char, index) => (
                 <motion.span
                   key={index}
                   variants={letterAnimation}
@@ -112,7 +112,7 @@ const Hero = () => {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
             >
               {[
-                { title: "Availability", value: "Remote" },
+                { title: "Availability", value: "Remote/Onsite" },
                 { title: "Contact", value: "tjsaravind77@gmail.com" },
                 {
                   title: "Get my resume",
@@ -190,11 +190,15 @@ const Hero = () => {
             Hey there! <strong>I'm Aravind</strong>, a passionate{" "}
             <strong>MERN Stack Developer</strong> who loves building web apps
             with clean and efficient code. I enjoy exploring{" "}
-            <strong>AI, Cloud Computing and Data Analytics</strong>, constantly
-            learning and working on new projects. Apart from coding, I love{" "}
+            <strong>AI, Cloud Computing, and Data Analytics</strong>, constantly
+            learning and working on new projects. I’m also a certified{" "}
+            <strong>CSA & CAD</strong>, with hands-on
+            experience in creating efficient workflows and automation solutions.
+            Apart from coding, I love{" "}
             <strong>organizing tech events and hackathons</strong> to share
             knowledge and connect with like-minded people.
           </p>
+
           <div className="lit-abt-tabs">
             <p className="lit-abt-tab">
               <img src="/assets/gvp-logo.svg" alt="logo" />

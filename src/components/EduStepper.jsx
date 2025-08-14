@@ -10,22 +10,22 @@ const codingProfiles = [
     title: "GitHub",
     icon: <FaGithub />,
     link: "https://github.com/aravind-thamarapalli",
-    counter_1: 146, // Contributions
-    counter_2: 16, // Repositories
+    counter_1: 158, // Contributions
+    counter_2: 23, // Repositories
   },
   {
     title: "LeetCode",
     icon: <SiLeetcode />,
     link: "https://leetcode.com/aravind0725",
-    counter_1: 949952, // Problems solved
-    counter_2: 1604, // Rating/Rank
+    counter_1: 630259, // Problems solved
+    counter_2: 1789, // Rating/Rank
   },
   {
     title: "CodeChef",
     icon: <SiCodechef />,
     link: "https://www.codechef.com/users/aravind_tham",
-    counter_1: 19843, // Problems solved
-    counter_2: 1603, // Rating
+    counter_1: 11441, // Problems solved
+    counter_2: 1676, // Rating
   },
 ];
 
@@ -57,7 +57,7 @@ const EduStepper = () => {
             <div className="card-details">
               <div>
               <p><strong>Global Rank:</strong></p>
-              <CountUp from={0} to={codingProfiles[currentStep].counter_1} duration={1} className="count-up-text" />
+              <CountUp from={10000} to={codingProfiles[currentStep].counter_1} duration={1} className="count-up-text" />
               </div>
               <div>
               <p><strong>Max Rating</strong></p>

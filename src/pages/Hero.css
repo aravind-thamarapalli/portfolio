@@ -97,6 +97,9 @@
     color:var(--primary-color);
     margin-bottom: 10px;
   }
+  .lit-abt-text strong {
+    color: #9b8744;
+  }
   
   .lit-abt-tabs {
     margin:  0 auto;
