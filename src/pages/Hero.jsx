@@ -33,11 +33,11 @@ const Hero = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Word cycling every 2.5s
+  // Word cycling every 4s
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % words.length);
-    }, 2500);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -61,7 +61,7 @@ const Hero = () => {
               key={index} // re-triggers animation when word changes
               text={words[index]}
               speed={100}
-              maxIterations={20}
+              maxIterations={10}
               characters="ABCD1234!?"
               animateOn="view" // 🔑 animate only when visible
               revealDirection="center" // 🔑 reveal effect from center
