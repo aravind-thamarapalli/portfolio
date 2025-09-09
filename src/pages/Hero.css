@@ -119,13 +119,12 @@
     align-items: center;
     display: flex;
     gap: 20px;
-    padding: 10px;
   }
   
   .lit-abt-tab img {
     height: 60px;
     width: 60px;
-    object-fit: cover;
+    object-fit: contain;
     transition: filter 0.3s ease-in-out;
   }
   

@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Projects from "./Projects";
 import Crosses from "../components/Crosses";
-import { motion } from "framer-motion";
-import "./Hero.css"; // Assuming you have a CSS file for styles
+import { motion, AnimatePresence } from "framer-motion";
+import DecryptedText from "../components/DecryptedText";
+import "./Hero.css";
+
+const words = ["A Mern Stack", "A ServiceNow", "An Enthusiastic"];
 
 const letterAnimation = {
   hidden: { opacity: 0, y: 50 },
@@ -12,26 +15,30 @@ const letterAnimation = {
 
 const textContainer = {
   hidden: { opacity: 1 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.05,
-    },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.05 } },
 };
 
 const Hero = () => {
   const [navColor, setNavColor] = useState("#111");
+  const [index, setIndex] = useState(0);
 
+  // Navbar color on scroll
   useEffect(() => {
     const handleScroll = () => {
       setNavColor(
         window.scrollY < window.innerHeight / 1.1 ? "#2e2e2e" : "#F2DE9B"
       );
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Word cycling every 2.5s
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length);
+    }, 2500);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -48,41 +55,34 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
         >
-          <motion.div
-            className="hero-name"
-            variants={textContainer}
-            initial="hidden"
-            animate="visible"
-          >
-            {"A MERN Stack".split("").map((char, index) => (
-              <motion.span
-                key={index}
-                variants={letterAnimation}
-                className="hero-letter"
-              >
-                {char}
-              </motion.span>
-            ))}
-          </motion.div>
+          {/* Vertical Sliding Text */}
+          <div className="hero-name">
+            <DecryptedText
+              key={index} // re-triggers animation when word changes
+              text={words[index]}
+              speed={100}
+              maxIterations={20}
+              characters="ABCD1234!?"
+              animateOn="view" // 🔑 animate only when visible
+              revealDirection="center" // 🔑 reveal effect from center
+              className="revealed"
+              parentClassName="all-letters"
+              encryptedClassName="encrypted"
+            />
 
-          <motion.div
-            className="hero-name"
-            variants={textContainer}
-            initial="hidden"
-            animate="visible"
-          >
-            {"Developer".split("").map((char, index) => (
-              <motion.span
-                key={index}
-                variants={letterAnimation}
-                className="hero-letter"
-              >
-                {char}
-              </motion.span>
-            ))}
-          </motion.div>
+            {/* Keep Developer static */}
+            <motion.div
+              variants={textContainer}
+              initial="hidden"
+              animate="visible"
+            >
+              <span className="hero-word">Developer</span>
+            </motion.div>
+          </div>
+
           <motion.img src="\assets\main.png" className="hero-img" />
 
+          {/* Hero Description */}
           <motion.div
             className="hero-des"
             initial={{ opacity: 0, y: 60 }}
@@ -90,19 +90,11 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             <motion.h2
-              variants={textContainer}
-              initial="hidden"
-              animate="visible"
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
             >
-              {"nice to meet u".split("").map((char, index) => (
-                <motion.span
-                  key={index}
-                  variants={letterAnimation}
-                  className="hero-letter"
-                >
-                  {char}
-                </motion.span>
-              ))}
+              Nice to meet u
             </motion.h2>
 
             <motion.div
@@ -126,57 +118,18 @@ const Hero = () => {
                     </a>
                   ),
                 },
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="hero-data-t"
-                  initial={{ opacity: 0, y: 60 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.8,
-                    ease: "easeOut",
-                    delay: 0.5 + index * 0.1,
-                  }}
-                >
-                  <motion.p
-                    className="hero-data-td"
-                    variants={textContainer}
-                    initial="hidden"
-                    animate="visible"
-                  >
-                    {item.title.split("").map((char, i) => (
-                      <motion.span
-                        key={i}
-                        variants={letterAnimation}
-                        className="hero-letter"
-                      >
-                        {char}
-                      </motion.span>
-                    ))}
-                  </motion.p>
-                  <motion.p
-                    variants={textContainer}
-                    initial="hidden"
-                    animate="visible"
-                  >
-                    {typeof item.value === "string"
-                      ? item.value.split("").map((char, i) => (
-                          <motion.span
-                            key={i}
-                            variants={letterAnimation}
-                            className="hero-letter"
-                          >
-                            {char}
-                          </motion.span>
-                        ))
-                      : item.value}
-                  </motion.p>
+              ].map((item, idx) => (
+                <motion.div key={idx} className="hero-data-t">
+                  <p className="hero-data-td">{item.title}</p>
+                  <p>{item.value}</p>
                 </motion.div>
               ))}
             </motion.div>
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Crosses and About Me */}
       <Crosses backgroundColor={"#2E2E2E"} color={"#F2DE9B"} />
       <div className="little-abt-me">
         <motion.div
@@ -192,10 +145,9 @@ const Hero = () => {
             with clean and efficient code. I enjoy exploring{" "}
             <strong>AI, Cloud Computing, and Data Analytics</strong>, constantly
             learning and working on new projects. I’m also a certified{" "}
-            <strong>CSA & CAD</strong>, with hands-on
-            experience in creating efficient workflows and automation solutions.
-            Apart from coding, I love{" "}
-            <strong>organizing tech events and hackathons</strong> to share
+            <strong>CSA & CAD</strong>, with hands-on experience in creating
+            efficient workflows and automation solutions. Apart from coding, I
+            love <strong>organizing tech events and hackathons</strong> to share
             knowledge and connect with like-minded people.
           </p>
 
@@ -206,7 +158,11 @@ const Hero = () => {
             </p>
             <p className="lit-abt-tab">
               <img src="/assets/asci-logo.png" alt="logo" />
-              Working as Vice President as AsCI GVPCE.
+              Working as Vice President at AsCI GVPCE.
+            </p>
+            <p className="lit-abt-tab">
+              <img src="/assets/sn-logo.png" alt="logo" />
+              Certified in ServiceNow CSA & CAD.
             </p>
           </div>
         </motion.div>

@@ -122,8 +122,7 @@ const ProjectTab = () => {
                   href={item.repository || "#"}
                   target={item.repository ? "_blank" : "_self"}
                   rel="noopener noreferrer"
-                  className={`p-t-l ${!item.repository ? "disabled-link" : ""}`}
-                  whileHover={item.repository ? buttonHover : {}}
+                  className={`p-t-l3 ${!item.repository ? "disabled-link" : ""}`}
                   whileTap={{ scale: 0.98 }}
                 >
                   <p style={{ color: item.color || "#ccc" }}>GitHub</p>
@@ -133,8 +132,7 @@ const ProjectTab = () => {
                   href={item.liveDemo || "#"}
                   target={item.liveDemo ? "_blank" : "_self"}
                   rel="noopener noreferrer"
-                  className={`p-t-l ${!item.liveDemo ? "disabled-link" : ""}`}
-                  whileHover={item.liveDemo ? buttonHover : {}}
+                  className={`p-t-l3 ${!item.liveDemo ? "disabled-link" : ""}`}
                   whileTap={{ scale: 0.98 }}
                 >
                   <p style={{ color: item.color || "#ccc" }}>Live Demo</p>

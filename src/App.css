@@ -236,6 +236,11 @@ ul {
   gap: 1rem;
 }
 
+.p-t-l3 {
+  display: flex;
+  gap: 1rem;
+}
+
 .p-t-l1 ul {
   display: flex;
   flex-direction: column;

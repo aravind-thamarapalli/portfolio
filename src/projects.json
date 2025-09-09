@@ -54,5 +54,16 @@
         "image": "assets/3.svg",
         "bgColor": "#C2A48A",
         "color": "#3B3B3B"
-    }
+    },
+{
+    "id": 6,
+    "name": "BorderlessSafety",
+    "description": "A travel legal assistant that helps students and travelers access reliable legal, cultural, and medical information across countries. Integrated with Google Maps API for location-based insights and a currency exchange feature.",
+    "technologies": ["MERN Stack", "Google Maps API", "Currency Exchange API"],
+    "repository": "https://github.com/aravind-thamarapalli/borderless-safety",
+    "liveDemo": "https://chintu1308.github.io/BorderlessSafety/",
+    "image": "assets/6.svg",
+    "bgColor": "#8AC2B8",
+    "color": "#1E3D3A"
+}
 ]

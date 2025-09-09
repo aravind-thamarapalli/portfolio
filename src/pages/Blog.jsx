@@ -8,26 +8,34 @@ import "./Blog.css"; // Assuming you have a CSS file for styles
 // JSON Data (can also be imported from a separate file if needed)
 const blogData = [
   {
-    title: "Why Application Monitoring is the Real Superpower Developers Overlook",
+    title:
+      "Why Application Monitoring is the Real Superpower Developers Overlook",
     description:
       "Building apps is just half the game. Keeping them alive, fast, and delightful? That’s the real championship.",
     link: "/blogpage1",
     date: "28-04-2025",
   },
   {
-  title: "Why AI Agents Are the Future of Smart Software",
-  description:
-    "Dive into the world of intelligent agents — from reactive responders to learning machines — and discover how they’re reshaping software as we know it.",
-  link: "/blogpage2",
-  date: "24-05-2025"
-},
-{
-  title: "Agentic Backends: No-Code? More Like No-Human!",
-  description:
-    "Say goodbye to REST APIs you manually stitch together. Say hello to backend agents that build routes, connect databases, and deploy your app—just by understanding your intent.",
-  link: "/blogpage3",
-  date: "20-07-2025",
-},
+    title: "Why AI Agents Are the Future of Smart Software",
+    description:
+      "Dive into the world of intelligent agents from reactive responders to learning machines and discover how they’re reshaping software as we know it.",
+    link: "/blogpage2",
+    date: "24-05-2025",
+  },
+  {
+    title: "Agentic Backends: No-Code? More Like No-Human!",
+    description:
+      "Say goodbye to REST APIs you manually stitch together. Say hello to backend agents that build routes, connect databases, and deploy your app just by understanding your intent.",
+    link: "/blogpage3",
+    date: "20-07-2025",
+  },
+  {
+    title: "MCP in Gen AI: The New Language Between Models and Tools",
+    description:
+      "Forget one off hacks and brittle wrappers. MCP gives AI models a common dictionary to talk with tools, APIs, and data making integrations smoother, smarter, and future-proof.",
+    link: "/blogpage4",
+    date: "09-09-2025",
+  },
 ];
 
 const letterAnimation = {
@@ -83,45 +91,50 @@ const Blog = () => {
             {blogData.map((blog, index) => (
               <motion.div
                 key={index}
-                className="blog-card"
                 variants={letterAnimation}
                 initial="hidden"
                 animate="visible"
-                transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.2 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                  delay: index * 0.2,
+                }}
               >
-                <motion.h3
-                  className="blog-card-title"
-                  variants={letterAnimation}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  {blog.title}
-                </motion.h3>
-                <motion.p
-                  className="blog-card-description"
-                  variants={letterAnimation}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  {blog.description}
-                </motion.p>
-                <motion.div
-                  variants={letterAnimation}
-                  initial="hidden"
-                  animate="visible"
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <Link to={blog.link} className="blog-card-link">
-                    Read more
-                  </Link>
-                  <p>
-                    <span className="blog-card-date">{blog.date}</span>
-                  </p>
-                </motion.div>
+                <Link to={blog.link} className="blog-card-link-wrapper">
+                  <div className="blog-card">
+                    <motion.h3
+                      className="blog-card-title"
+                      variants={letterAnimation}
+                      initial="hidden"
+                      animate="visible"
+                    >
+                      {blog.title}
+                    </motion.h3>
+                    <motion.p
+                      className="blog-card-description"
+                      variants={letterAnimation}
+                      initial="hidden"
+                      animate="visible"
+                    >
+                      {blog.description}
+                    </motion.p>
+                    <motion.div
+                      variants={letterAnimation}
+                      initial="hidden"
+                      animate="visible"
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                      }}
+                    >
+                      <span className="blog-card-read">Read more</span>
+                      <p>
+                        <span className="blog-card-date">{blog.date}</span>
+                      </p>
+                    </motion.div>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </motion.div>

@@ -11,6 +11,7 @@ import Blog from "./pages/Blog";
 import BlogPage from "./pages/BlogPage";
 import BlogPage2 from "./pages/BlogPage2";
 import BlogPage3 from "./pages/BlogPage3";
+import BlogPage4 from "./pages/BlogPage4";
 import "./App.css";
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route path="/blogpage1" element={<PageWrapper direction={1}><BlogPage /></PageWrapper>} />
           <Route path="/blogpage2" element={<PageWrapper direction={1}><BlogPage2 /></PageWrapper>} />
           <Route path="/blogpage3" element={<PageWrapper direction={1}><BlogPage3 /></PageWrapper>} />
+          <Route path="/blogpage4" element={<PageWrapper direction={1}><BlogPage4 /></PageWrapper>} />
         </Routes>
       )}
     </AnimatePresence>
