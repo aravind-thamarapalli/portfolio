@@ -158,7 +158,7 @@ const Hero = () => {
             </p>
             <p className="lit-abt-tab">
               <img src="/assets/asci-logo.png" alt="logo" />
-              Working as Vice President at AsCI GVPCE.
+              Working as Club Advisor at AsCI GVPCE.
             </p>
             <p className="lit-abt-tab">
               <img src="/assets/sn-logo.png" alt="logo" />

@@ -11,10 +11,11 @@
   
   .hero-name {
     color: var(--accent-color);
-    font-size: 10rem;
+    font-size: clamp(4rem, 10vw, 10rem);
     font-weight: bold;
     padding: 0 50px;
     overflow: hidden;
+    word-wrap: break-word;
   }
   
   .hero-img {
@@ -28,22 +29,26 @@
     justify-content: space-around;
     align-items: center;
     overflow: hidden;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
   
   .hero-des h2 {
-    font-size: 5rem;
+    font-size: clamp(3rem, 5vw, 5rem);
     font-weight: bold;
     overflow: hidden;
   }
   
   .hero-data {
     display: flex;
-    gap: 10rem;
+    gap: clamp(2rem, 8vw, 10rem);
     overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
   .hero-data-t {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -51,11 +56,12 @@
   }
   
   .hero-data-td {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
     text-decoration: underline;
     font-weight: bold;
     overflow: hidden;
   }
+
   .resume-link {
     color: var(--accent-color);
     text-decoration: none;
@@ -71,7 +77,8 @@
     display: flex;
     align-items: right;
     padding: 80px 50px 0;
-    height: 92vh;
+    height: auto;
+    min-height: 92vh;
     width: 100%;
   }
   
@@ -79,34 +86,38 @@
     text-align: right;
     padding: 30px;
     border-radius: 10px;
+    width: 100%;
   }
   
   .lit-abt-title {
-    font-size: 8rem;
+    font-size: clamp(4rem, 8vw, 8rem);
     font-weight: bold;
-    color: #F2DE9B; /* Soft gold color for elegance */
+    color: #F2DE9B;
     margin-bottom: 15px;
   }
   
   .lit-abt-text {
     text-align: left;
-    font-size: 24px;
-    line-height: 1.2;
-    width: 70%;
+    font-size: clamp(1.2rem, 2vw, 24px);
+    line-height: 1.4;
+    width: 100%;
+    max-width: 70%;
     font-family: 'DM Sans', sans-serif;
     color:var(--primary-color);
     margin-bottom: 10px;
   }
+
   .lit-abt-text strong {
     color: #9b8744;
   }
   
   .lit-abt-tabs {
-    margin:  0 auto;
+    margin: 0 auto;
     margin-top: 50px;
     color: var(--primary-color);
     text-align: center;
     width: max-content;
+    max-width: 100%;
     padding: 16px;
     border: 2px solid var(--primary-color);
     display: flex;
@@ -115,45 +126,116 @@
   }
   
   .lit-abt-tab {
-    font-size: 42px;
+    font-size: clamp(1.8rem, 4vw, 42px);
     align-items: center;
     display: flex;
     gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   
   .lit-abt-tab img {
-    height: 60px;
-    width: 60px;
+    height: clamp(40px, 6vw, 60px);
+    width: clamp(40px, 6vw, 60px);
     object-fit: contain;
     transition: filter 0.3s ease-in-out;
   }
   
   /* Mobile responsiveness */
+  @media (max-width: 1024px) {
+    .little-abt-me {
+      padding: 60px 30px 0;
+    }
+
+    .lit-abt-title {
+      font-size: clamp(3rem, 7vw, 6rem);
+    }
+
+    .lit-abt-text {
+      max-width: 85%;
+      font-size: clamp(1.1rem, 1.8vw, 20px);
+    }
+
+    .lit-abt-tabs {
+      width: 95%;
+      padding: 12px;
+    }
+
+    .lit-abt-tab {
+      font-size: clamp(1.5rem, 3.5vw, 36px);
+      gap: 15px;
+    }
+  }
+
   @media (max-width: 768px) {
+    .little-abt-me {
+      padding: 50px 20px 0;
+      height: auto;
+    }
+
     .abt-container {
       padding: 20px;
     }
   
     .lit-abt-title {
-      font-size: 2rem;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      text-align: center;
     }
   
     .lit-abt-text {
-      font-size: 1rem;
+      font-size: clamp(1rem, 1.5vw, 18px);
       text-align: left;
       width: 100%;
+      max-width: 100%;
     }
   
     .lit-abt-tabs {
       width: 100%;
-      padding: 10px;
-      border: none;
+      padding: 12px;
+      border: 1px solid var(--primary-color);
+      gap: 15px;
     }
   
     .lit-abt-tab {
-      font-size: 1.5rem;
-      flex-direction: column;
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      flex-direction: row;
       align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .lit-abt-tab img {
+      height: clamp(35px, 5vw, 50px);
+      width: clamp(35px, 5vw, 50px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .little-abt-me {
+      padding: 40px 15px 0;
+    }
+
+    .lit-abt-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .lit-abt-text {
+      font-size: clamp(0.9rem, 1.2vw, 16px);
+    }
+
+    .lit-abt-tabs {
+      padding: 10px;
+      gap: 12px;
+    }
+
+    .lit-abt-tab {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      gap: 8px;
+    }
+
+    .lit-abt-tab img {
+      height: clamp(30px, 4vw, 45px);
+      width: clamp(30px, 4vw, 45px);
     }
   }
   

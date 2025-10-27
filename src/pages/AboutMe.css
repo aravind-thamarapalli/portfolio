@@ -17,37 +17,45 @@
 }
 
 .tech-stack-h2 {
-  font-size: 6rem;
+  font-size: clamp(3rem, 6vw, 6rem);
   margin-bottom: 30px;
 }
 
 .tech-details {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     justify-items: center;
     align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .tech-card {
   position: relative;
-  width: 220px;            /* Fixed width for consistent column */
+  width: 100%;
+  max-width: 220px;
+  min-height: 80px;
   padding: 15px;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tech-name {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 2vw, 2rem);
   font-weight: 600;
   color: var(--secondary-color, #333);
   transition: opacity 0.3s ease;
+  text-align: center;
 }
 
 .tech-icon {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 2.5vw, 2.5rem);
   color: var(--secondary-color, #333);
   position: absolute;
   top: 50%;
@@ -69,7 +77,6 @@
 
 .tech-card:hover {
   transform: scale(1.05);
-  cursor: none; /* Optional: hides cursor on hover */
 }
 
 
@@ -78,21 +85,27 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+    align-items: center;
     padding: 80px 50px 0;
-    height: 96vh;
+    height: auto;
+    min-height: 96vh;
     background-color: var(--accent-color);
     color: var(--secondary-color);
+    position: relative;
 }
 
 .about-me-img {
     width: 33%;
+    min-width: 250px;
     height: 100%;
     object-fit: cover;
     overflow: hidden;
+    position: relative;
 }
 
 .about-me-img img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -100,25 +113,30 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    flex: 1;
+    gap: 2rem;
 }
 
 .about-me-h2 {
     font-weight: bold;
     font-size: var(--font-size-large);
+    line-height: 1.1;
 }
 
 .about-me-des {
     background-color: var(--secondary-color);
-    height: 92vh;
-    padding: 80px 100px 0;
+    height: auto;
+    min-height: 92vh;
+    padding: 80px 100px 50px;
 }
 
 .a-m-des1 {
     padding: 1rem 50px;
-    width: 70%;
+    width: 100%;
+    max-width: 70%;
     font-weight: bold;
     color: var(--accent-color);
-    font-size: clamp(4rem, 10vw, 7rem);
+    font-size: clamp(3rem, 7vw, 7rem);
 }
 
 /* Get Connected Section */
@@ -126,9 +144,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 80px 50px 0;
+    padding: 80px 50px 50px;
     background-color: var(--secondary-color);
     color: var(--accent-color);
+    min-height: 60vh;
 }
   
 .get-conn-1 {
@@ -146,22 +165,31 @@
 .get-conn-p {
     padding: 1rem 50px;
     font-family: 'DM Sans', sans-serif;
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
 }
   
 .get-conn-links {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 1rem 50px;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
   
 .get-conn-link {
-    font-size: 6rem;
+    font-size: clamp(3rem, 6vw, 6rem);
     text-decoration: none;
     color: var(--accent-color);
     align-items: center;
     display: flex;
     font-weight: bold;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.get-conn-link:hover {
+    opacity: 0.7;
 }
   
 .get-conn-i {
@@ -171,44 +199,59 @@
 /* Responsive Styles */
 @media (max-width: 1024px) {
     .about-me {
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: center;
         text-align: center;
         height: auto;
-        padding: 50px 30px 0;
+        min-height: auto;
+        padding: 60px 30px;
+        background-color: var(--accent-color);
     }
 
     .about-me-img {
-        width: 80%;
-        height: auto;
+        display: none;
     }
 
     .about-me1 {
         align-items: center;
+        width: 100%;
+        padding: 0;
+        position: relative;
+        z-index: 1;
+        gap: 1.5rem;
     }
 
     .about-me-h2 {
         font-size: var(--font-size-medium);
+        color: var(--secondary-color);
     }
 
     .about-me-des {
         height: auto;
-        padding: 50px 30px 0;
+        padding: 50px 30px 40px;
         text-align: center;
     }
 
     .a-m-des1 {
-        width: 90%;
+        width: 100%;
+        max-width: 90%;
         font-size: var(--font-size-medium);
         padding: 1rem 20px;
+        margin: 0 auto;
     }
 
     .tech-details {
-        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+    }
+
+    .tech-card {
+        max-width: 180px;
+        min-height: 70px;
     }
 
     .get-conn {
-        padding: 50px 30px 0;
+        padding: 50px 30px 40px;
         text-align: center;
     }
 
@@ -219,35 +262,80 @@
 
     .get-conn-p {
         padding: 1rem 30px;
-        font-size: 1.2rem;
+        font-size: clamp(1.1rem, 1.3vw, 1.3rem);
     }
 
     .get-conn-links {
         grid-template-columns: 1fr;
         gap: var(--gap-small);
+        padding: 1rem 20px;
     }
 
     .get-conn-link {
-        font-size: 4rem;
+        font-size: clamp(2.5rem, 5vw, 4rem);
     }
 }
 
 @media (max-width: 768px) {
+    .about-me {
+        padding: 50px 20px;
+        background-color: var(--accent-color);
+        min-height: auto;
+    }
+
     .about-me-img {
-        width: 100%;
+        display: none;
+    }
+
+    .about-me1 {
+        padding: 0;
+        align-items: center;
+    }
+
+    .about-me-h2 {
+        color: var(--secondary-color);
+    }
+
+    .about-me-des {
+        padding: 40px 20px 30px;
     }
 
     .a-m-des1 {
         width: 100%;
-        font-size: clamp(2.5rem, 7vw, 4rem);
+        max-width: 100%;
+        font-size: clamp(2rem, 6vw, 4rem);
+        padding: 1rem 15px;
+    }
+
+    .tech-stack {
+        padding: 30px 15px;
+    }
+
+    .tech-stack-h2 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .tech-details {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
     }
 
     .tech-card {
         padding: 10px;
+        max-width: 150px;
+        min-height: 60px;
+    }
+
+    .tech-name {
+        font-size: clamp(1.2rem, 1.8vw, 1.6rem);
     }
 
     .tech-icon {
-        font-size: 1.8rem;
+        font-size: clamp(1.5rem, 2vw, 1.8rem);
+    }
+
+    .get-conn {
+        padding: 40px 20px 30px;
     }
 
     .get-conn-h2 {
@@ -255,33 +343,78 @@
     }
 
     .get-conn-p {
-        font-size: 1rem;
+        font-size: clamp(1rem, 1.2vw, 1.2rem);
+        padding: 1rem 20px;
+    }
+
+    .get-conn-links {
+        padding: 1rem 15px;
     }
 
     .get-conn-link {
-        font-size: 3rem;
+        font-size: clamp(2rem, 4vw, 3rem);
     }
 }
 
 @media (max-width: 480px) {
+    .about-me {
+        padding: 40px 15px;
+        background-color: var(--accent-color);
+        min-height: auto;
+    }
+
+    .about-me-img {
+        display: none;
+    }
+
+    .about-me1 {
+        padding: 0;
+        gap: 1rem;
+    }
+
     .about-me-h2 {
         font-size: var(--font-size-small);
+        color: var(--secondary-color);
+    }
+
+    .about-me-des {
+        padding: 30px 15px 20px;
     }
 
     .a-m-des1 {
-        font-size: clamp(2.2rem, 6vw, 3rem);
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        padding: 0.8rem 10px;
+    }
+
+    .tech-stack {
+        padding: 25px 10px;
+    }
+
+    .tech-stack-h2 {
+        font-size: clamp(2rem, 4.5vw, 3rem);
+    }
+
+    .tech-details {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 8px;
     }
 
     .tech-card {
         padding: 8px;
+        max-width: 120px;
+        min-height: 50px;
+    }
+
+    .tech-name {
+        font-size: clamp(1rem, 1.5vw, 1.3rem);
     }
 
     .tech-icon {
-        font-size: 1.5rem;
+        font-size: clamp(1.2rem, 1.8vw, 1.5rem);
     }
 
     .get-conn {
-        padding: 30px 20px 0;
+        padding: 30px 15px 20px;
     }
 
     .get-conn-h2 {
@@ -289,10 +422,15 @@
     }
 
     .get-conn-p {
-        font-size: 0.9rem;
+        font-size: clamp(0.9rem, 1.1vw, 1rem);
+        padding: 0.8rem 15px;
+    }
+
+    .get-conn-links {
+        padding: 0.8rem 10px;
     }
 
     .get-conn-link {
-        font-size: 2.5rem;
+        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
     }
 }

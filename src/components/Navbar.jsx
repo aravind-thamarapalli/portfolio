@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import './Navbar.css'; // Assuming you have a CSS file for styling
+import './Navbar.css';
 
 const Navbar = ({ color }) => {
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
 
   const getLinkStyle = (path) => {
     return {
@@ -13,14 +14,49 @@ const Navbar = ({ color }) => {
     };
   };
 
+  // Close menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   return (
     <nav className="navbar" style={{ color: color }}>
-      <Link to="/" style={getLinkStyle('/')}><h1 className="logo">Aravind Thamarapalli</h1></Link>
-      <ul className="nav-links">
-        <li><Link to="/" style={getLinkStyle('/')}>Home</Link></li>
-        <li><Link to="/blog" style={getLinkStyle('/blog')}>Blogs</Link></li>
-        <li><Link to="/about" style={getLinkStyle('/about')}>Profile</Link></li>
-      </ul>
+      <Link to="/" style={getLinkStyle('/')}>
+        <h1 className="logo">Aravind Thamarapalli</h1>
+      </Link>
+
+      {/* Hamburger */}
+      <button 
+        className={`hamburger ${isOpen ? 'open' : ''}`}
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label="Menu"
+      >
+        <span style={{ backgroundColor: color }}></span>
+        <span style={{ backgroundColor: color }}></span>
+        <span style={{ backgroundColor: color }}></span>
+      </button>
+
+      {/* Menu */}
+      <div className={`nav-menu ${isOpen ? 'open' : ''}`}>
+        <Link to="/" style={getLinkStyle('/')}>Home</Link>
+        <Link to="/blog" style={getLinkStyle('/blog')}>Blogs</Link>
+        <Link to="/about" style={getLinkStyle('/about')}>Profile</Link>
+      </div>
+
+      {/* Overlay */}
+      {isOpen && <div className="overlay" onClick={() => setIsOpen(false)}></div>}
     </nav>
   );
 };

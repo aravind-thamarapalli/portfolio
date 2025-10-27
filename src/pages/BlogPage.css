@@ -1,10 +1,9 @@
-
 /* INDIVIDUAL BLOG */
 
-
 .blog-page-container {
-
     padding: 2rem 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
     background-color: #121212;
     color: var(--secondary-color);
     font-family: 'DM Sans', sans-serif;
@@ -31,15 +30,18 @@
   }
   
   .blog-page-title {
-    font-size: 2.8rem;
+    font-size: clamp(2rem, 2.8vw, 2.8rem);
     color: #00d9d9;
     font-family: 'DM Sans', sans-serif;
+    line-height: 1.3;
+    word-wrap: break-word;
   }
   
   .blog-page-meta {
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 1vw, 1rem);
     color: #bbb;
     font-family: 'DM Sans', sans-serif;
+    margin-top: 0.5rem;
   }
   
   
@@ -48,7 +50,7 @@
   }
   
   .blog-page-intro {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
     line-height: 1.6;
     margin-bottom: 2rem;
     color: #00d9d9;
@@ -67,6 +69,8 @@
   
   .blog-page-banner img {
     width: 60%;
+    max-width: 800px;
+    min-width: 300px;
     height: auto;
     border-radius: 12px;
   }
@@ -79,6 +83,8 @@
     border-left: 5px solid #00ffd0;
     border-radius: 8px;
     font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.95rem, 1vw, 1rem);
+    line-height: 1.5;
   }
   
   .blog-page-story-box {
@@ -94,6 +100,7 @@
     color: #00d9d9;
     margin-bottom: 1rem;
     font-family: 'DM Sans', sans-serif;
+    font-size: clamp(1.3rem, 1.5vw, 1.5rem);
   }
   
   .blog-page-story-box ul {
@@ -108,6 +115,7 @@
   .blog-page-story-box ul li {
     margin-bottom: 0.5rem;
     font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.95rem, 1vw, 1rem);
   }
   
   .blog-page-moral {
@@ -115,6 +123,7 @@
     font-weight: bold;
     color: #00d9d9;
     font-family: 'DM Sans', sans-serif;
+    font-size: clamp(1rem, 1.1vw, 1.1rem);
   }
   /* Back Button */
   .blog-page-back-button {
@@ -233,7 +242,7 @@
   }
   
   .blog-page-metrics-title, .blog-page-tools-title, .blog-page-career-title {
-    font-size: 1.5rem;
+    font-size: clamp(1.3rem, 1.5vw, 1.5rem);
     font-weight: bold;
     margin-bottom: 1rem;
     color: #00d9d9;
@@ -243,14 +252,15 @@
   .blog-page-key-metrics, .blog-page-tools-list ul{
     display: flex;
     gap: 0.5rem;
-    font-size: 1.2rem;
+    font-size: clamp(1.1rem, 1.2vw, 1.2rem);
     color: #aaa;
     font-family: 'DM Sans', sans-serif;
+    flex-wrap: wrap;
   }
   
   .blog-page-paragraph {
     margin: 1rem 0;
-    font-size: 1rem;
+    font-size: clamp(0.95rem, 1vw, 1rem);
     line-height: 1.6;
     color: #aaa;
     font-family: 'DM Sans', sans-serif;
@@ -262,7 +272,7 @@
     margin-right: 8px;
     padding: 0.4rem 0.8rem;
     border-radius: 30px;
-    font-size: 0.9rem;
+    font-size: clamp(0.85rem, 0.9vw, 0.9rem);
     display: inline-block;
     font-family: 'DM Sans', sans-serif;
   }
@@ -270,9 +280,11 @@
   .blog-page-footer {
     text-align: center;
     margin-top: 4rem;
-    font-size: 1rem;
+    font-size: clamp(0.95rem, 1vw, 1rem);
     color: #aaa;
+    padding-bottom: 2rem;
   }
+
   .blog-page-footer a {
     color: #00d9d9;
     text-decoration: none;
@@ -281,6 +293,25 @@
   
   /* ========== RESPONSIVE STYLES ========== */
   
+  /* Large Tablets and Small Desktops: 1024px */
+  @media (max-width: 1024px) {
+    .blog-page-container {
+      padding: 2rem 3rem;
+    }
+
+    .blog-page-banner img {
+      width: 70%;
+    }
+
+    .go-to-top-button {
+      bottom: 25px;
+      right: 25px;
+      width: 48px;
+      height: 48px;
+      font-size: 32px;
+    }
+  }
+
   /* Tablets: 768px and down */
   @media (max-width: 768px) {
     .blog-page-container {
@@ -289,21 +320,21 @@
     }
   
     .blog-page-title {
-      font-size: 2.2rem;
+      font-size: clamp(1.8rem, 2.5vw, 2.2rem);
     }
   
     .blog-page-intro {
-      font-size: 1.2rem;
+      font-size: clamp(1.1rem, 1.3vw, 1.2rem);
     }
   
     .blog-page-banner img {
-      width: 80%;
+      width: 85%;
     }
   
     .blog-page-tldr p,
     .blog-page-featured-quote,
     .blog-page-story-box {
-      font-size: 0.95rem;
+      font-size: clamp(0.9rem, 0.95vw, 0.95rem);
       padding: 1rem;
     }
   
@@ -311,6 +342,7 @@
     .blog-page-tools-list ul {
       flex-direction: column;
       gap: 0.3rem;
+      align-items: flex-start;
     }
   
     .blog-page-tags {
@@ -334,48 +366,51 @@
     }
   
     .blog-page-title {
-      font-size: 1.8rem;
+      font-size: clamp(1.5rem, 2vw, 1.8rem);
     }
   
     .blog-page-intro {
-      font-size: 1rem;
+      font-size: clamp(1rem, 1.1vw, 1.1rem);
     }
   
     .blog-page-meta {
-      font-size: 0.85rem;
+      font-size: clamp(0.85rem, 0.9vw, 0.9rem);
     }
   
     .blog-page-banner img {
       width: 100%;
+      min-width: auto;
     }
   
     .blog-page-tldr p,
     .blog-page-featured-quote,
     .blog-page-story-box {
-      font-size: 0.9rem;
+      font-size: clamp(0.85rem, 0.9vw, 0.9rem);
       padding: 0.8rem;
     }
   
     .blog-page-key-metrics li,
     .blog-page-tools-list li,
     .blog-page-tags span {
-      font-size: 0.8rem;
+      font-size: clamp(0.8rem, 0.85vw, 0.85rem);
       padding: 0.3rem 0.6rem;
     }
   
     .blog-page-paragraph {
-      font-size: 0.9rem;
+      font-size: clamp(0.9rem, 0.95vw, 0.95rem);
       line-height: 1.5;
     }
   
     .blog-page-back-button {
-      font-size: 1rem;
+      font-size: clamp(0.95rem, 1vw, 1rem);
     }
   
     .go-to-top-button {
       width: 40px;
       height: 40px;
       font-size: 24px;
+      bottom: 15px;
+      right: 15px;
     }
   }
   
